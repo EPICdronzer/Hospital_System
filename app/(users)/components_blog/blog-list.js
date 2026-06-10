@@ -1,0 +1,236 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { FaUser, FaRegComment, FaChevronRight } from "react-icons/fa";
+
+const POSTS = [
+  {
+    id: 1,
+    title: "Medical Of This Working Health Blog",
+    excerpt: "Medical standard chunk of| nibh velit auctor aliquet sollic tudin.",
+    img: "https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&w=600&q=80",
+    category: "MEDICAL",
+    date: "May 02",
+    author: "Admin"
+  },
+  {
+    id: 2,
+    title: "There Is Only One Thing That Is Hospital.",
+    excerpt: "Medical standard chunk of| nibh velit auctor aliquet sollic tudin.",
+    img: "https://images.unsplash.com/photo-1516841273335-e39b37888115?auto=format&fit=crop&w=600&q=80",
+    category: "MEDICAL",
+    date: "April 12",
+    author: "Admin"
+  },
+  {
+    id: 3,
+    title: "This Working World and Infection Prevention.",
+    excerpt: "Medical standard chunk of| nibh velit auctor aliquet sollic tudin.",
+    img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
+    category: "MEDICAL",
+    date: "Jan 02",
+    author: "Admin"
+  },
+  {
+    id: 4,
+    title: "Medical Of This Working Health Blog",
+    excerpt: "Medical standard chunk of| nibh velit auctor aliquet sollic tudin.",
+    img: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80",
+    category: "MEDICAL",
+    date: "June 02",
+    author: "Admin"
+  },
+  {
+    id: 5,
+    title: "This Working World and Infection Prevention.",
+    excerpt: "Medical standard chunk of| nibh velit auctor aliquet sollic tudin.",
+    img: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=600&q=80",
+    category: "MEDICAL",
+    date: "May 22",
+    author: "Admin"
+  },
+  {
+    id: 6,
+    title: "Medical Of This Working Health Blog",
+    excerpt: "Medical standard chunk of| nibh velit auctor aliquet sollic tudin.",
+    img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
+    category: "MEDICAL",
+    date: "Feb 10",
+    author: "Admin"
+  }
+];
+
+export default function BlogList() {
+  const [hoveredCard, setHoveredCard] = useState(null);
+
+  return (
+    <section aria-label="Our Largest Blog" style={{ backgroundColor: "#ffffff", padding: "80px 0", fontFamily: "'Segoe UI', sans-serif" }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
+
+        {/* Heading */}
+        <div style={{ textAlign: "center", marginBottom: 56 }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, marginBottom: 10 }}>
+            <div style={{ width: 18, height: 2, backgroundColor: "#2783e3" }} />
+            <span style={{ color: "#2783e3", fontWeight: 700, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.12em" }}>
+              OUR LARGEST BLOG
+            </span>
+            <div style={{ width: 18, height: 2, backgroundColor: "#2783e3" }} />
+          </div>
+          <h2 style={{ color: "#0d1b4b", fontWeight: 900, fontSize: 34, lineHeight: 1.25, margin: 0 }}>
+            Latest Posts & Articles
+          </h2>
+        </div>
+
+        {/* 6-Card Grid */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 28 }} className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {POSTS.map(({ id, title, excerpt, img, category, date, author }, index) => {
+            const isHovered = hoveredCard === index;
+            
+            return (
+              <Link 
+                href={`/blog/${id}`}
+                key={id}
+                onMouseEnter={() => setHoveredCard(index)}
+                onMouseLeave={() => setHoveredCard(null)}
+                style={{
+                  display: "block",
+                  backgroundColor: "#ffffff",
+                  borderRadius: 4,
+                  overflow: "hidden",
+                  textDecoration: "none",
+                  boxShadow: isHovered ? "0 10px 30px rgba(0,0,0,0.12)" : "0 4px 15px rgba(0,0,0,0.05)",
+                  transition: "all 0.3s ease",
+                  position: "relative"
+                }}
+              >
+                {/* Image Wrapper */}
+                <div style={{ position: "relative", height: 220, overflow: "hidden" }}>
+                  
+                  {/* Image */}
+                  <img
+                    src={img}
+                    alt={title}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      transform: isHovered ? "scale(1.05)" : "scale(1)",
+                      transition: "transform 0.4s ease",
+                      display: "block"
+                    }}
+                  />
+
+                  {/* Top-Left Category Badge */}
+                  <span style={{
+                    position: "absolute",
+                    top: 16,
+                    left: 16,
+                    backgroundColor: "#2783e3",
+                    color: "#ffffff",
+                    fontWeight: 700,
+                    fontSize: 11,
+                    padding: "4px 12px",
+                    borderRadius: 12,
+                    zIndex: 2
+                  }}>
+                    {category}
+                  </span>
+
+                  {/* Overlapping Date Tag on Bottom Right */}
+                  <div style={{
+                    position: "absolute",
+                    bottom: 0,
+                    right: 16,
+                    backgroundColor: isHovered ? "#2783e3" : "#0d1b4b",
+                    color: "#ffffff",
+                    padding: "8px 16px",
+                    fontWeight: 700,
+                    fontSize: 12,
+                    textAlign: "center",
+                    borderTopLeftRadius: 4,
+                    borderTopRightRadius: 4,
+                    zIndex: 2,
+                    transition: "background-color 0.3s ease",
+                    fontFamily: "Courier, monospace",
+                    textTransform: "uppercase"
+                  }}>
+                    {date.split(" ")[0]}
+                    <br />
+                    <span style={{ fontSize: 13 }}>{date.split(" ")[1]}</span>
+                  </div>
+
+                </div>
+
+                {/* Details Content padding */}
+                <div style={{ padding: "24px 24px 32px 24px" }}>
+                  
+                  {/* Meta (Author + Comments) */}
+                  <div style={{ display: "flex", gap: 16, marginBottom: 14, color: "#6b7280", fontSize: 12.5, fontWeight: 500 }}>
+                    <span style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                      <FaUser style={{ color: "#2783e3", fontSize: 11 }} /> By: {author}
+                    </span>
+                    <span style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                      <FaRegComment style={{ color: "#2783e3", fontSize: 12 }} /> Comment
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 style={{
+                    color: "#0d1b4b",
+                    fontWeight: 800,
+                    fontSize: 17,
+                    lineHeight: 1.4,
+                    margin: "0 0 12px 0",
+                    transition: "color 0.3s ease"
+                  }}>
+                    {title}
+                  </h3>
+
+                  {/* Excerpt */}
+                  <p style={{
+                    color: "#6b7280",
+                    fontSize: 13.5,
+                    lineHeight: 1.6,
+                    margin: "0 0 20px 0"
+                  }}>
+                    {excerpt}
+                  </p>
+
+                  {/* Read More Link */}
+                  <span style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 6,
+                    color: "#2783e3",
+                    fontWeight: 700,
+                    fontSize: 13.5
+                  }}>
+                    Read More <FaChevronRight style={{ fontSize: 9 }} />
+                  </span>
+
+                </div>
+
+                {/* Diagonal Blue Corner Ribbon (Visible/Enlarges on Hover) */}
+                <div style={{
+                  position: "absolute",
+                  bottom: 0,
+                  right: 0,
+                  width: 0,
+                  height: 0,
+                  borderStyle: "solid",
+                  borderWidth: isHovered ? "0 0 24px 24px" : "0 0 0px 0px",
+                  borderColor: `transparent transparent #2783e3 transparent`,
+                  transition: "all 0.3s ease",
+                  zIndex: 3
+                }} />
+
+              </Link>
+            );
+          })}
+        </div>
+
+      </div>
+    </section>
+  );
+}
