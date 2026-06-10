@@ -13,17 +13,98 @@ export default function AboutUs() {
   };
 
   return (
-    <section aria-label="Our About Us" style={{ backgroundColor: "#ffffff", padding: "80px 0", fontFamily: "'Segoe UI', sans-serif" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
+    <>
+      <style>{`
+        .abus-main-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 64px;
+          align-items: center;
+        }
+        .abus-support-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 24px;
+          margin-bottom: 24px;
+        }
+        .abus-contact-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px;
+        }
+        .abus-img-col {
+          position: relative;
+          height: 500px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        @media (max-width: 1023px) {
+          .abus-main-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+          }
+          .abus-img-col {
+            height: 360px !important;
+            width: 100%;
+          }
+        }
+        @media (max-width: 767px) {
+          .abus-support-grid { grid-template-columns: 1fr !important; }
+          .abus-contact-grid { grid-template-columns: 1fr !important; }
+          /* Stack images on mobile */
+          .abus-img-col {
+            height: auto !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 16px !important;
+            padding: 0 4px !important;
+            overflow: hidden !important;
+          }
+          .abus-img-abs-top {
+            position: static !important;
+            width: 100% !important;
+            height: 200px !important;
+            border-radius: 8px !important;
+          }
+          .abus-img-abs-bot {
+            position: static !important;
+            width: 100% !important;
+            height: 180px !important;
+            border-radius: 8px !important;
+            border: none !important;
+          }
+          .abus-deco-semicircle,
+          .abus-deco-dots,
+          .abus-deco-badge,
+          .abus-deco-howwework {
+            display: none !important;
+          }
+        }
+      `}</style>
+    <section aria-label="Our About Us" style={{ backgroundColor: "#ffffff", padding: "80px 0", fontFamily: "'Segoe UI', sans-serif", position: "relative", overflow: "hidden" }}>
+      {/* Subtle background watermarks */}
+      <div style={{
+        position: "absolute", top: 16, left: 20, zIndex: 0,
+        opacity: 0.05, fontSize: 140, color: "#0d1b4b", lineHeight: 1,
+        pointerEvents: "none", userSelect: "none",
+      }}>✚</div>
+      <div style={{
+        position: "absolute", bottom: 20, right: 20, zIndex: 0,
+        opacity: 0.05, fontSize: 140, color: "#0d1b4b", lineHeight: 1,
+        pointerEvents: "none", userSelect: "none",
+      }}>⚕</div>
+
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", position: "relative", zIndex: 1 }}>
         
         {/* Main Row */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }} className="grid-cols-1 lg:grid-cols-2">
+        <div className="abus-main-grid">
           
           {/* LEFT: Image Collage */}
-          <div style={{ position: "relative", height: 500, display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div className="abus-img-col">
             
             {/* Left Blue Semi-circle Shape overlay */}
-            <div style={{
+            <div className="abus-deco-semicircle" style={{
               position: "absolute",
               left: -40,
               top: "10%",
@@ -39,7 +120,7 @@ export default function AboutUs() {
             }} />
 
             {/* Dot Pattern (Bottom-Left of Top Image) */}
-            <div style={{
+            <div className="abus-deco-dots" style={{
               position: "absolute",
               left: 40,
               bottom: 40,
@@ -55,7 +136,7 @@ export default function AboutUs() {
             </div>
 
             {/* Top-Left Image (Nurses with Tablet) */}
-            <div style={{
+            <div className="abus-img-abs-top" style={{
               position: "absolute",
               left: 40,
               top: 10,
@@ -74,7 +155,7 @@ export default function AboutUs() {
             </div>
 
             {/* Bottom-Right Image (Patient in Bed) */}
-            <div style={{
+            <div className="abus-img-abs-bot" style={{
               position: "absolute",
               right: 10,
               bottom: 10,
@@ -94,7 +175,7 @@ export default function AboutUs() {
             </div>
 
             {/* Overlapping Badge: 26+ Experience */}
-            <div style={{
+            <div className="abus-deco-badge" style={{
               position: "absolute",
               left: "32%",
               bottom: "34%",
@@ -115,7 +196,7 @@ export default function AboutUs() {
             </div>
 
             {/* How We Work Indicator (vertical text + arrow) */}
-            <div style={{
+            <div className="abus-deco-howwework" style={{
               position: "absolute",
               right: "34%",
               top: "40%",
@@ -175,7 +256,7 @@ export default function AboutUs() {
             </p>
 
             {/* Support Columns */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 24 }}>
+            <div className="abus-support-grid">
               {/* Client Support */}
               <div style={{ borderBottom: "1px solid #e2e8f0", paddingBottom: 16 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
@@ -271,7 +352,7 @@ export default function AboutUs() {
               Have questions about our medical programs, specialists, or want to schedule an urgent consultation? Speak directly to our support desk right now.
             </p>
             
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }} className="grid-cols-1 md:grid-cols-3">
+            <div className="abus-contact-grid">
               {/* Call Support */}
               <div style={{ backgroundColor: "#ffffff", padding: 20, borderRadius: 6, boxShadow: "0 2px 10px rgba(0,0,0,0.04)" }}>
                 <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 12 }}>
@@ -320,5 +401,6 @@ export default function AboutUs() {
 
       </div>
     </section>
+    </>
   );
 }

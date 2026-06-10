@@ -167,7 +167,7 @@ export default function Footer() {
               <h3 className="text-white font-bold text-lg mb-6">Recent Posts</h3>
               <ul className="space-y-5">
                 {RECENT_POSTS.map((post) => (
-                  <li key={post.id} className="flex items-start gap-4">
+                  <li key={post.id} className="recent-post-item flex items-start gap-4">
                     <img
                       src={post.img}
                       alt={post.title}
@@ -223,6 +223,73 @@ export default function Footer() {
 
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 767px) {
+          footer {
+            text-align: center !important;
+          }
+          footer .grid {
+            grid-template-columns: 1fr !important;
+          }
+          footer .grid > div {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            padding-top: 32px !important;
+            padding-bottom: 32px !important;
+          }
+          footer .grid > div:first-child {
+            margin-top: 0px !important;
+            padding-top: 48px !important;
+            padding-bottom: 48px !important;
+          }
+          footer ul {
+            align-items: center !important;
+            display: flex !important;
+            flex-direction: column !important;
+            width: 100% !important;
+          }
+          footer li {
+            justify-content: center !important;
+            text-align: center !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            width: 100% !important;
+          }
+          footer li a, footer li span {
+            text-align: center !important;
+            justify-content: center !important;
+            align-items: center !important;
+          }
+          footer .recent-post-item {
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            gap: 8px !important;
+          }
+          footer .recent-post-item img {
+            margin: 0 auto 4px !important;
+          }
+          footer .flex-row {
+            justify-content: center !important;
+          }
+          footer .flex.items-center.gap-2 {
+            justify-content: center !important;
+          }
+          footer .max-w-7xl > div {
+            justify-content: center !important;
+            text-align: center !important;
+          }
+          footer a.flex {
+            justify-content: center !important;
+          }
+        }
+      `}</style>
 
     </footer>
   );

@@ -65,6 +65,20 @@ export default function BlogList() {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   return (
+    <>
+      <style>{`
+        .bl-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 28px;
+        }
+        @media (max-width: 1023px) {
+          .bl-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 599px) {
+          .bl-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     <section aria-label="Our Largest Blog" style={{ backgroundColor: "#ffffff", padding: "80px 0", fontFamily: "'Segoe UI', sans-serif" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
 
@@ -83,7 +97,7 @@ export default function BlogList() {
         </div>
 
         {/* 6-Card Grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 28 }} className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="bl-grid">
           {POSTS.map(({ id, title, excerpt, img, category, date, author }, index) => {
             const isHovered = hoveredCard === index;
             
@@ -232,5 +246,6 @@ export default function BlogList() {
 
       </div>
     </section>
+    </>
   );
 }

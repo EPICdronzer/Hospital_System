@@ -11,7 +11,25 @@ import {
 export default function Topbar() {
   return (
     <div style={{ backgroundColor: "#0d1b4b", color: "#fff" }}>
+      <style>{`
+        @media (max-width: 767px) {
+          .topbar-location,
+          .topbar-divider,
+          .topbar-socials {
+            display: none !important;
+          }
+          .topbar-container {
+            justify-content: center !important;
+            padding: 6px 16px !important;
+          }
+          .topbar-contact-info {
+            justify-content: center !important;
+            width: 100% !important;
+          }
+        }
+      `}</style>
       <div
+        className="topbar-container"
         style={{
           maxWidth: 1200,
           margin: "0 auto",
@@ -23,10 +41,25 @@ export default function Topbar() {
           gap: 8,
         }}
       >
-        {/* Left — Contact info */}
-        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+        {/* Left — Contact info & Greetings */}
+        <div className="topbar-contact-info" style={{ display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
+          <span
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 6,
+              color: "#FF9933", // Tricolor saffron
+              fontSize: 12,
+              fontWeight: 800,
+            }}
+          >
+            नमस्ते | Namaste
+          </span>
+
+          <span className="topbar-divider" style={{ color: "rgba(255,255,255,0.2)" }}>|</span>
+
           <a
-            href="mailto:demo@example.com"
+            href="mailto:contact@medilo.in"
             style={{
               display: "flex",
               alignItems: "center",
@@ -37,12 +70,13 @@ export default function Topbar() {
             }}
           >
             <FaEnvelope style={{ fontSize: 11 }} />
-            demo@example.com
+            contact@medilo.in
           </a>
 
-          <span style={{ color: "rgba(255,255,255,0.2)" }}>|</span>
+          <span className="topbar-divider" style={{ color: "rgba(255,255,255,0.2)" }}>|</span>
 
           <span
+            className="topbar-location"
             style={{
               display: "flex",
               alignItems: "center",
@@ -52,12 +86,12 @@ export default function Topbar() {
             }}
           >
             <FaMapMarkerAlt style={{ fontSize: 11 }} />
-            15/K, Dhaka London City, LOT
+            कनॉट प्लेस, नई दिल्ली (New Delhi, India)
           </span>
         </div>
 
         {/* Right — Social icons */}
-        <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+        <div className="topbar-socials" style={{ display: "flex", alignItems: "center", gap: 6 }}>
           {[
             { Icon: FaFacebookF, label: "Facebook" },
             { Icon: FaPinterestP, label: "Pinterest" },

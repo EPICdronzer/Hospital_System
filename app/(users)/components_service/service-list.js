@@ -75,11 +75,33 @@ export default function ServiceList() {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   return (
+    <>
+      <style>{`
+        .svc-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
+        }
+        @media (max-width: 1023px) {
+          .svc-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 479px) {
+          .svc-grid { grid-template-columns: 1fr !important; }
+        }
+        .svc-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          margin-bottom: 56px;
+          flex-wrap: wrap;
+          gap: 24px;
+        }
+      `}</style>
     <section aria-label="Our Best Services" style={{ backgroundColor: "#ffffff", padding: "80px 0", fontFamily: "'Segoe UI', sans-serif" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
         
         {/* Top Header Section */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 56, flexWrap: "wrap", gap: 24 }}>
+        <div className="svc-header">
           <div style={{ maxWidth: 500 }}>
             {/* Eyebrow */}
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
@@ -102,7 +124,7 @@ export default function ServiceList() {
         </div>
 
         {/* 8-Card Grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }} className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="svc-grid">
           {SERVICES.map(({ id, number, name, desc, Icon, img }, index) => {
             const isHovered = hoveredCard === index;
             
@@ -244,5 +266,6 @@ export default function ServiceList() {
 
       </div>
     </section>
+    </>
   );
 }

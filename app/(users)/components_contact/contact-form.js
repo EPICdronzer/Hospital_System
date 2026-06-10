@@ -16,7 +16,6 @@ export default function ContactForm() {
   const [captchaCode, setCaptchaCode] = useState("");
   const [status, setStatus] = useState({ type: "", message: "" });
 
-  // Function to generate a random 6-character captcha
   const generateCaptcha = () => {
     const chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     let code = "";
@@ -43,7 +42,7 @@ export default function ContactForm() {
     
     if (formData.captchaInput.trim() !== captchaCode) {
       setStatus({ type: "error", message: "Verification word does not match the CAPTCHA code. Please try again." });
-      generateCaptcha(); // regenerate on failure
+      generateCaptcha(); 
       setFormData(prev => ({ ...prev, captchaInput: "" }));
       return;
     }
@@ -61,16 +60,47 @@ export default function ContactForm() {
   };
 
   return (
+    <>
+      <style>{`
+        .cf-layout {
+          display: grid;
+          grid-template-columns: 1fr 1.2fr;
+          gap: 64px;
+          align-items: stretch;
+        }
+        .cf-inputs-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+        @media (max-width: 1023px) {
+          .cf-layout { grid-template-columns: 1fr !important; gap: 32px !important; }
+        }
+        @media (max-width: 767px) {
+          .cf-image-wrapper {
+            padding: 16px 16px 0 16px !important;
+          }
+          .cf-hero-img {
+            height: 200px !important;
+          }
+          .cf-emergency-box {
+            width: 100% !important;
+            padding: 16px 20px !important;
+            margin-top: 16px !important;
+            margin-bottom: 16px !important;
+            box-sizing: border-box !important;
+          }
+        }
+        @media (max-width: 599px) {
+          .cf-inputs-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     <section aria-label="Contact Form Section" style={{ padding: "80px 0", backgroundColor: "#ffffff", fontFamily: "'Segoe UI', sans-serif" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
         
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 64, alignItems: "stretch" }} className="grid-cols-1 lg:grid-cols-2">
+        <div className="cf-layout">
           
           {/* LEFT COLUMN: Dentist image and Emergency Badge */}
           <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             
             {/* Main Wrapper with light blue box and top navy border */}
-            <div style={{
+            <div className="cf-image-wrapper" style={{
               backgroundColor: "#eaf2ff", // light blue background
               borderTop: "6px solid #0d1b4b", // thick navy border line at the top
               borderRadius: "4px 4px 0 0",
@@ -83,7 +113,7 @@ export default function ContactForm() {
             }}>
               
               {/* Doctor / Dentist holding teeth model */}
-              <div style={{ position: "relative", width: "100%", height: 320, zIndex: 1 }}>
+              <div className="cf-hero-img" style={{ position: "relative", width: "100%", height: 320, zIndex: 1 }}>
                 <img 
                   src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80"
                   alt="Dentist holding teeth model"
@@ -106,7 +136,7 @@ export default function ContactForm() {
               </div>
 
               {/* Emergency Call Box directly nested at the bottom */}
-              <div style={{
+              <div className="cf-emergency-box" style={{
                 backgroundColor: "#0d1b4b", // dark navy blue
                 padding: "24px 32px",
                 width: "90%",
@@ -179,7 +209,7 @@ export default function ContactForm() {
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               
               {/* Inputs Grid (2x2) */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }} className="grid-cols-1 sm:grid-cols-2">
+              <div className="cf-inputs-grid">
                 <input
                   type="text"
                   name="name"
@@ -365,5 +395,6 @@ export default function ContactForm() {
 
       </div>
     </section>
+    </>
   );
 }

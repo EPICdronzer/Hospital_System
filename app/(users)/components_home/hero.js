@@ -33,19 +33,26 @@ export default function Hero() {
         >
           <div className="max-w-[500px] max-sm:max-w-full">
 
-            <h1 className="text-white text-[48px] max-[900px]:text-[36px] max-sm:text-[28px] max-[380px]:text-[22px] font-black leading-[1.12] mb-4 tracking-tight font-sans">
-              Doctors Need Help<br />Patient Service.
+            {/* Sanskrit medical motto eyebrow */}
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-[#FF9933] text-[13px] font-extrabold uppercase tracking-widest bg-white/10 px-3 py-1 rounded-md">
+                सेवा परमो धर्मः | Service is the Supreme Duty
+              </span>
+            </div>
+
+            <h1 className="text-white text-[44px] max-[900px]:text-[34px] max-sm:text-[26px] max-[380px]:text-[20px] font-black leading-[1.15] mb-4 tracking-tight font-sans">
+              स्वस्थ भारत, समृद्ध भारत<br />
+              <span className="text-[#128807]">Dedicated Patient Seva</span>
             </h1>
 
-            <p className="text-[#bdd1f0] text-[13.5px] max-sm:text-[13px] leading-[1.75] mb-4 max-w-[360px] max-sm:max-w-full font-sans">
-              Medical ers piciatis unde omnis iste natus this mountains, far
-              from the countries for medical.
+            <p className="text-[#bdd1f0] text-[13.5px] max-sm:text-[13px] leading-[1.75] mb-4 max-w-[380px] max-sm:max-w-full font-sans">
+              नमस्ते (Namaste)! Welcome to Medilo Healthcare India. We offer premier healthcare facilities blended with compassionate Indian hospitality and care.
             </p>
 
             <ul className="list-none m-0 mb-7 p-0 flex flex-col gap-[9px]">
-              {["This man for it Medical Doctor.", "We provide a revolutionary"].map((item) => (
+              {["अनुभवी एवं समर्पित चिकित्सक दल (Expert Indian Doctors)", "24/7 आपातकालीन सेवा एवं सहयोग (Emergency Seva)"].map((item) => (
                 <li key={item} className="flex items-center gap-2 text-white text-[13.5px] font-sans">
-                  <FaCheckCircle className="text-[#3b9dff] shrink-0 text-[15px]" />
+                  <FaCheckCircle className="text-[#128807] shrink-0 text-[15px]" />
                   {item}
                 </li>
               ))}
@@ -56,20 +63,22 @@ export default function Hero() {
               {/* Contact Now button */}
               <a
                 href="/contact"
-                className="inline-flex items-center gap-1.5 bg-[#2783e3] hover:bg-[#1a6fd0] text-white font-bold text-[14px] max-[380px]:text-[12px] px-7 py-3 rounded-full no-underline transition-colors duration-150 whitespace-nowrap font-sans"
+                className="inline-flex items-center gap-1.5 bg-[#FF9933] hover:bg-[#e07f24] text-white font-bold text-[14px] max-[380px]:text-[12px] px-7 py-3 rounded-full no-underline transition-colors duration-150 whitespace-nowrap font-sans shadow-lg"
               >
-                Contact Now <span className="font-black text-[16px]">»</span>
+                संपर्क करें | Contact <span className="font-black text-[16px]">»</span>
               </a>
 
-              {/* How We Work button */}
+              {/* How We Work button pointing to YouTube */}
               <a
-                href="/about"
+                href="https://www.youtube.com/watch?v=Mx3sZxhFJ_E"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 text-white font-semibold text-[14px] max-[380px]:text-[12px] no-underline hover:opacity-80 transition-opacity duration-150 whitespace-nowrap font-sans"
               >
-                <span className="w-[38px] h-[38px] rounded-full bg-[#2783e3] flex items-center justify-center shrink-0">
+                <span className="w-[38px] h-[38px] rounded-full bg-[#128807] flex items-center justify-center shrink-0">
                   <FaPlay className="text-[10px] text-white ml-0.5" />
                 </span>
-                How We Work
+                वीडियो देखें | Watch Video
               </a>
             </div>
 
@@ -79,7 +88,7 @@ export default function Hero() {
         {/* 24 Hrs Badge — centered in the hero */}
         <div
           aria-label="24 hours support"
-          className="absolute z-30 w-[90px] h-[90px] max-[900px]:w-[78px] max-[900px]:h-[78px] max-sm:w-[70px] max-sm:h-[70px] rounded-full bg-[#2783e3] border-4 border-white shadow-[0_4px_18px_rgba(39,131,227,0.5)] flex flex-col items-center justify-center text-white font-sans"
+          className="absolute z-30 w-[90px] h-[90px] rounded-full bg-[#2783e3] border-4 border-white shadow-[0_4px_18px_rgba(39,131,227,0.5)] hidden lg:flex flex-col items-center justify-center text-white font-sans"
           style={{
             left: "50%",
             top: "50%",

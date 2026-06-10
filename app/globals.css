@@ -12,14 +12,46 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+}
+
+/* ─── Global responsive helpers ─── */
+* { box-sizing: border-box; }
+
+img { max-width: 100%; }
+
+/* Carousel touch scroll */
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-track > * {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* Responsive grid helpers */
+@media (max-width: 767px) {
+  .resp-grid-2 { grid-template-columns: 1fr !important; }
+  .resp-grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+  .resp-hide   { display: none !important; }
+  .resp-show   { display: block !important; }
+}
+@media (max-width: 479px) {
+  .resp-grid-4 { grid-template-columns: 1fr !important; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .resp-grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
 }

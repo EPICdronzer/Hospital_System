@@ -12,37 +12,37 @@ import {
 } from "react-icons/fa";
 
 const NAV_LINKS = [
-  { label: "Home",    href: "/",          drop: false },
-  { label: "About",   href: "/about",     drop: false },
-  { label: "Service", href: "/service",   drop: false },
-  { label: "Blog",    href: "/blog",      drop: false },
-  { label: "Timetable", href: "/timetable", drop: false },
-  { label: "Contact", href: "/contact",   drop: false },
+  { label: "मुख्य पृष्ठ | Home",    href: "/",          drop: false },
+  { label: "परिचय | About Us",   href: "/about",     drop: false },
+  { label: "सेवाएं | Services", href: "/service",   drop: false },
+  { label: "ब्लॉग | Blog",      href: "/blog",      drop: false },
+  { label: "समय सारणी | Timetable", href: "/timetable", drop: false },
+  { label: "संपर्क | Contact",   href: "/contact",   drop: false },
 ];
 
 const SEARCH_INDEX = [
-  { title: "Home",            href: "/",           category: "Page" },
-  { title: "About Us",        href: "/about",      category: "Page" },
-  { title: "Our Services",    href: "/service",    category: "Page" },
-  { title: "Blog",            href: "/blog",       category: "Page" },
-  { title: "Timetable",       href: "/timetable",  category: "Page" },
-  { title: "Contact Us",      href: "/contact",    category: "Page" },
-  { title: "Pharmacology",          href: "/service/pharmacology",    category: "Service" },
-  { title: "Orthopedic",            href: "/service/orthopedic",      category: "Service" },
-  { title: "Hematology",            href: "/service/hematology",      category: "Service" },
-  { title: "Plastic Surgery",       href: "/service/plastic-surgery", category: "Service" },
-  { title: "Neurology",             href: "/service/neurology",       category: "Service" },
-  { title: "Ophthalmology",         href: "/service/ophthalmology",   category: "Service" },
-  { title: "Dental Care",           href: "/service/dental-care",     category: "Service" },
-  { title: "Service & Check",       href: "/service/service-check",   category: "Service" },
-  { title: "Dr. James Wilson",      href: "/doctor/james-wilson",     category: "Doctor" },
-  { title: "Dr. Samuel Brooks",     href: "/doctor/samuel-brooks",    category: "Doctor" },
-  { title: "Dr. Norma Pedric",      href: "/doctor/norma-pedric",     category: "Doctor" },
-  { title: "Dr. Robert Chen",       href: "/doctor/robert-chen",      category: "Doctor" },
+  { title: "मुख्य पृष्ठ | Home",            href: "/",           category: "Page" },
+  { title: "परिचय | About Us",        href: "/about",      category: "Page" },
+  { title: "सेवाएं | Our Services",    href: "/service",    category: "Page" },
+  { title: "ब्लॉग | Blog",            href: "/blog",       category: "Page" },
+  { title: "समय सारणी | Timetable",       href: "/timetable",  category: "Page" },
+  { title: "संपर्क | Contact Us",      href: "/contact",    category: "Page" },
+  { title: "औषध विज्ञान | Pharmacology",          href: "/service/pharmacology",    category: "Service" },
+  { title: "हड्डी रोग विज्ञान | Orthopedic",            href: "/service/orthopedic",      category: "Service" },
+  { title: "रक्त विज्ञान | Hematology",            href: "/service/hematology",      category: "Service" },
+  { title: "प्लास्टिक सर्जरी | Plastic Surgery",       href: "/service/plastic-surgery", category: "Service" },
+  { title: "न्यूरोलॉजी | Neurology",             href: "/service/neurology",       category: "Service" },
+  { title: "नेत्र विज्ञान | Ophthalmology",         href: "/service/ophthalmology",   category: "Service" },
+  { title: "दंत चिकित्सा | Dental Care",           href: "/service/dental-care",     category: "Service" },
+  { title: "स्वास्थ्य जांच | Service & Check",       href: "/service/service-check",   category: "Service" },
+  { title: "Dr. Jayesh Vyas",      href: "/doctor/jayesh-vyas",     category: "Doctor" },
+  { title: "Dr. Sandeep Banerjee",  href: "/doctor/sandeep-banerjee",    category: "Doctor" },
+  { title: "Dr. Nirmala Patel",      href: "/doctor/nirmala-patel",     category: "Doctor" },
+  { title: "Dr. Rahul Choudhury",   href: "/doctor/rahul-choudhury",      category: "Doctor" },
   { title: "Dr. Aisha Khan",        href: "/doctor/aisha-khan",       category: "Doctor" },
-  { title: "Dr. Michael Torres",    href: "/doctor/michael-torres",   category: "Doctor" },
+  { title: "Dr. Madhavan Nair",    href: "/doctor/madhavan-nair",   category: "Doctor" },
   { title: "Dr. Priya Sharma",      href: "/doctor/priya-sharma",     category: "Doctor" },
-  { title: "Dr. David Lee",         href: "/doctor/david-lee",        category: "Doctor" },
+  { title: "Dr. Devendra Lal",         href: "/doctor/devendra-lal",        category: "Doctor" },
   { title: "Medical Of This Working Health Blog", href: "/blog/1",    category: "Blog" },
   { title: "There Is Only One Thing That Is Hospital", href: "/blog/2", category: "Blog" },
   { title: "Working World and Infection Prevention", href: "/blog/3", category: "Blog" },
@@ -127,6 +127,13 @@ export default function Navbar() {
         }}
         aria-label="Main navigation"
       >
+        {/* Sleek Indian flag tricolor top border */}
+        <div style={{ display: "flex", height: "4px", width: "100%" }}>
+          <div style={{ flex: 1, backgroundColor: "#FF9933" }} />
+          <div style={{ flex: 1, backgroundColor: "#ffffff" }} />
+          <div style={{ flex: 1, backgroundColor: "#128807" }} />
+        </div>
+
         <div
           style={{
             maxWidth: "1200px",
@@ -169,12 +176,12 @@ export default function Navbar() {
               style={{
                 color: "#0d1b4b",
                 fontWeight: 800,
-                fontSize: "24px",
+                fontSize: "22px",
                 letterSpacing: "-0.5px",
                 fontFamily: "'Segoe UI', Arial, sans-serif",
               }}
             >
-              Medilo
+              मेडिलो | Medilo
             </span>
           </a>
 
@@ -219,6 +226,7 @@ export default function Navbar() {
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             {/* Search Button */}
             <button
+              className="desktop-search"
               aria-label="Search"
               onClick={openSearch}
               style={{
@@ -249,6 +257,7 @@ export default function Navbar() {
 
             {/* Contact Now CTA */}
             <a
+              className="desktop-contact"
               href="/contact"
               style={{
                 display: "inline-flex",
@@ -375,10 +384,14 @@ export default function Navbar() {
             .desktop-nav { display: flex !important; }
             .mobile-toggle { display: none !important; }
             .mobile-drawer { display: none !important; }
+            .desktop-search { display: flex !important; }
+            .desktop-contact { display: inline-flex !important; }
           }
           @media (max-width: 1023px) {
             .desktop-nav { display: none !important; }
             .mobile-toggle { display: block !important; }
+            .desktop-search { display: none !important; }
+            .desktop-contact { display: none !important; }
           }
         `}</style>
       </nav>
