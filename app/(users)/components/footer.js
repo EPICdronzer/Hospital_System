@@ -8,289 +8,224 @@ import {
   FaMapMarkerAlt,
   FaPhone,
   FaStethoscope,
+  FaEnvelope,
+  FaWhatsapp,
 } from "react-icons/fa";
-
-const RECENT_POSTS = [
-  {
-    id: 1,
-    date: "23 jun 2024",
-    title: "We round Solution york Blog",
-    img: "https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&w=80&q=80",
-  },
-  {
-    id: 2,
-    date: "20 jun 2024",
-    title: "The Medical Of This Working Health",
-    img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=80&q=80",
-  },
-];
 
 export default function Footer() {
   return (
-    <footer aria-label="Site footer">
+    <footer aria-label="Site footer" style={{ fontFamily: "'Segoe UI', Arial, sans-serif" }}>
 
-      {/* ══════════════════════════════════════
-          MAIN FOOTER
-      ══════════════════════════════════════ */}
-      <div
-        className="relative"
-        style={{
-          background: "#0f1a4e",
-        }}
-      >
-        {/* Background medical image overlay for right 3 columns */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=60')",
-            backgroundSize: "cover",
-            backgroundPosition: "center right",
-            opacity: 0.18,
-            left: "25%",
-          }}
-        />
+      {/* ── MAIN FOOTER ── */}
+      <div style={{ background: "#0f1a4e", padding: "40px 0 0" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
+          <div className="footer-grid">
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-
-            {/* ── Column 1: Brand (bright blue, overflows top) ── */}
-            <div
-              className="relative z-10 flex flex-col px-10 pb-16 pt-16"
-              style={{
-                background: "#2b9fd8",
-                marginTop: "-80px",
-              }}
-            >
-              {/* Logo */}
-              <Link href="/" className="flex items-center gap-3 mb-5">
-                <span
-                  className="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
-                  style={{ background: "rgba(255,255,255,0.2)" }}
-                >
-                  <FaStethoscope className="text-white text-xl" />
+            {/* Col 1 – Brand */}
+            <div className="footer-brand-col">
+              <Link href="/" className="footer-logo-link">
+                <span className="footer-logo-icon">
+                  <FaStethoscope style={{ color: "#ffffff", fontSize: 18 }} />
                 </span>
-                <span className="text-white font-extrabold text-3xl tracking-wide">
-                  Medilo
+                <span style={{ color: "#ffffff", fontWeight: 800, fontSize: 22, letterSpacing: "-0.5px" }}>
+                  मेडिलो | Medilo
                 </span>
               </Link>
 
-              {/* Divider */}
-              <hr className="border-white/40 mb-5" />
+              <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 12.5, lineHeight: 1.7, margin: "12px 0 14px" }}>
+                स्वास्थ्य सेवा में विश्वसनीयता। Trusted healthcare across India — compassionate doctors, 24/7 seva.
+              </p>
 
-              {/* Contact info */}
-              <ul className="space-y-4 text-sm text-white/90 mb-7 flex-1">
-                <li className="flex items-start gap-3">
-                  <FaClock className="mt-0.5 shrink-0 text-white text-xs" />
-                  <span>
-                    <strong className="font-semibold">Open Hours of Government:</strong>
-                    <br />
-                    Mon – Fri: 8.00 am. – 6.00 pm.
-                  </span>
+              <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 8 }}>
+                <li style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <FaClock style={{ color: "#FF9933", fontSize: 11, flexShrink: 0 }} />
+                  <span style={{ color: "rgba(255,255,255,0.75)", fontSize: 12 }}>सोम–शुक्र: 8am – 6pm (Mon–Fri)</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <FaMapMarkerAlt className="mt-0.5 shrink-0 text-white text-xs" />
-                  <span>13/A, Miranda Halim City .</span>
+                <li style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <FaMapMarkerAlt style={{ color: "#FF9933", fontSize: 11, flexShrink: 0 }} />
+                  <span style={{ color: "rgba(255,255,255,0.75)", fontSize: 12 }}>कनॉट प्लेस, नई दिल्ली – 110001</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <FaPhone className="mt-0.5 shrink-0 text-white text-xs" />
-                  <span>099 695 695 35</span>
+                <li style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <FaPhone style={{ color: "#FF9933", fontSize: 11, flexShrink: 0 }} />
+                  <a href="tel:+919969569535" style={{ color: "rgba(255,255,255,0.75)", fontSize: 12, textDecoration: "none" }}>+91 99695 69535</a>
+                </li>
+                <li style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <FaWhatsapp style={{ color: "#25d366", fontSize: 12, flexShrink: 0 }} />
+                  <a href="https://wa.me/919969569535" style={{ color: "rgba(255,255,255,0.75)", fontSize: 12, textDecoration: "none" }}>WhatsApp पर संपर्क करें</a>
                 </li>
               </ul>
 
-              {/* Social icons */}
-              <div className="flex items-center gap-2">
-                {[
-                  { Icon: FaFacebookF, label: "Facebook" },
-                  { Icon: FaPinterestP, label: "Pinterest" },
-                  { Icon: FaTwitter, label: "Twitter" },
-                  { Icon: FaInstagram, label: "Instagram" },
-                ].map(({ Icon, label }) => (
-                  <Link
-                    key={label}
-                    href="#"
-                    aria-label={label}
-                    className="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-150 hover:opacity-80"
-                    style={{ background: "rgba(255,255,255,0.25)" }}
+              <div style={{ display: "flex", gap: 8, marginTop: 14 }}>
+                {[FaFacebookF, FaPinterestP, FaTwitter, FaInstagram].map((Icon, i) => (
+                  <Link key={i} href="#" aria-label="social"
+                    style={{
+                      width: 28, height: 28, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.25)",
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      color: "rgba(255,255,255,0.65)", textDecoration: "none", fontSize: 10,
+                      transition: "all 0.15s"
+                    }}
+                    onMouseEnter={e => { e.currentTarget.style.background = "#2783e3"; e.currentTarget.style.borderColor = "#2783e3"; e.currentTarget.style.color = "#fff"; }}
+                    onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.25)"; e.currentTarget.style.color = "rgba(255,255,255,0.65)"; }}
                   >
-                    <Icon className="text-white text-xs" />
+                    <Icon />
                   </Link>
                 ))}
               </div>
             </div>
 
-            {/* ── Column 2: Service ── */}
-            <div className="px-8 py-14">
-              <h3 className="text-white font-bold text-lg mb-6">Service</h3>
-              <ul className="space-y-3">
-                {["Why choose us", "Our solutions", "Partners", "Core values", "Our projects"].map(
-                  (item) => (
-                    <li key={item}>
-                      <Link
-                        href="#"
-                        className="text-blue-200 text-sm hover:text-white transition-colors duration-150"
-                      >
-                        {item}
-                      </Link>
-                    </li>
-                  )
-                )}
-              </ul>
-            </div>
-
-            {/* ── Column 3: Quick Link ── */}
-            <div className="px-8 py-14">
-              <h3 className="text-white font-bold text-lg mb-6">Quick Link</h3>
-              <ul className="space-y-3">
+            {/* Col 2 – Quick Links */}
+            <div className="footer-col">
+              <h3 style={{ color: "#FF9933", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 14, display: "flex", alignItems: "center", gap: 8 }}>
+                <span style={{ width: 20, height: 2, background: "#FF9933", display: "inline-block" }} /> त्वरित लिंक | Quick Links
+              </h3>
+              <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 8 }}>
                 {[
-                  { label: "About Us",  href: "/about" },
-                  { label: "Services",  href: "/service" },
-                  { label: "Timetable", href: "/timetable" },
-                  { label: "Blog",      href: "/blog" },
-                  { label: "Contact",   href: "/contact" },
-                ].map((item) => (
-                  <li key={item.label}>
-                    <Link
-                      href={item.href}
-                      className="text-blue-200 text-sm hover:text-white transition-colors duration-150"
+                  { label: "मुख्य पृष्ठ | Home", href: "/" },
+                  { label: "परिचय | About Us", href: "/about" },
+                  { label: "सेवाएं | Services", href: "/service" },
+                  { label: "समय सारणी | Timetable", href: "/timetable" },
+                  { label: "ब्लॉग | Blog", href: "/blog" },
+                  { label: "संपर्क | Contact", href: "/contact" },
+                ].map(item => (
+                  <li key={item.href}>
+                    <Link href={item.href}
+                      style={{ color: "rgba(190,215,255,0.8)", fontSize: 12.5, textDecoration: "none", transition: "color 0.15s", display: "flex", alignItems: "center", gap: 6 }}
+                      onMouseEnter={e => e.currentTarget.style.color = "#ffffff"}
+                      onMouseLeave={e => e.currentTarget.style.color = "rgba(190,215,255,0.8)"}
                     >
-                      {item.label}
+                      <span style={{ color: "#2783e3", fontSize: 8 }}>▶</span> {item.label}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* ── Column 4: Recent Posts ── */}
-            <div className="px-8 py-14">
-              <h3 className="text-white font-bold text-lg mb-6">Recent Posts</h3>
-              <ul className="space-y-5">
-                {RECENT_POSTS.map((post) => (
-                  <li key={post.id} className="recent-post-item flex items-start gap-4">
-                    <img
-                      src={post.img}
-                      alt={post.title}
-                      className="w-16 h-16 object-cover rounded-full shrink-0"
-                    />
-                    <div>
-                      <p className="text-blue-300 text-xs mb-1">{post.date}</p>
-                      <Link
-                        href={`/blog/${post.id}`}
-                        className="text-white text-sm font-semibold leading-snug hover:text-blue-300 transition-colors duration-150"
-                      >
-                        {post.title}
-                      </Link>
-                    </div>
+            {/* Col 3 – Services */}
+            <div className="footer-col">
+              <h3 style={{ color: "#FF9933", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 14, display: "flex", alignItems: "center", gap: 8 }}>
+                <span style={{ width: 20, height: 2, background: "#FF9933", display: "inline-block" }} /> हमारी सेवाएं | Services
+              </h3>
+              <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 8 }}>
+                {[
+                  { label: "हृदय रोग | Cardiology", href: "/service" },
+                  { label: "हड्डी रोग | Orthopedic", href: "/service" },
+                  { label: "तंत्रिका रोग | Neurology", href: "/service" },
+                  { label: "दंत चिकित्सा | Dental Care", href: "/service" },
+                  { label: "नेत्र विज्ञान | Ophthalmology", href: "/service" },
+                  { label: "स्त्री रोग | Gynecology", href: "/service" },
+                ].map(item => (
+                  <li key={item.label}>
+                    <Link href={item.href}
+                      style={{ color: "rgba(190,215,255,0.8)", fontSize: 12.5, textDecoration: "none", transition: "color 0.15s", display: "flex", alignItems: "center", gap: 6 }}
+                      onMouseEnter={e => e.currentTarget.style.color = "#ffffff"}
+                      onMouseLeave={e => e.currentTarget.style.color = "rgba(190,215,255,0.8)"}
+                    >
+                      <span style={{ color: "#128807", fontSize: 8 }}>▶</span> {item.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
+            {/* Col 4 – Newsletter/Contact CTA */}
+            <div className="footer-col">
+              <h3 style={{ color: "#FF9933", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 14, display: "flex", alignItems: "center", gap: 8 }}>
+                <span style={{ width: 20, height: 2, background: "#FF9933", display: "inline-block" }} /> अपॉइंटमेंट | Appointment
+              </h3>
+              <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 12.5, lineHeight: 1.7, margin: "0 0 14px" }}>
+                अपना अपॉइंटमेंट बुक करें। Book your appointment with our specialist doctors today.
+              </p>
+              <a href="/contact"
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: 6,
+                  background: "#2783e3", color: "#fff", fontWeight: 700,
+                  fontSize: 12.5, padding: "9px 20px", textDecoration: "none",
+                  marginBottom: 10, transition: "background 0.15s"
+                }}
+                onMouseEnter={e => e.currentTarget.style.background = "#1a6fd0"}
+                onMouseLeave={e => e.currentTarget.style.background = "#2783e3"}
+              >
+                अपॉइंटमेंट बुक करें »
+              </a>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 4 }}>
+                <FaEnvelope style={{ color: "#FF9933", fontSize: 12 }} />
+                <a href="mailto:contact@medilo.in" style={{ color: "rgba(190,215,255,0.8)", fontSize: 12, textDecoration: "none" }}>contact@medilo.in</a>
+              </div>
+            </div>
+
           </div>
+        </div>
+
+        {/* Indian tricolor divider */}
+        <div style={{ display: "flex", height: 3, marginTop: 32 }}>
+          <div style={{ flex: 1, background: "#FF9933" }} />
+          <div style={{ flex: 1, background: "#ffffff" }} />
+          <div style={{ flex: 1, background: "#128807" }} />
         </div>
       </div>
 
-      {/* ══════════════════════════════════════
-          BOTTOM BAR
-      ══════════════════════════════════════ */}
-      <div style={{ background: "#0a0d1f" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-
-          {/* Copyright */}
-          <p className="text-blue-200 text-sm">
-            Copyright © 2024{" "}
-            <span className="text-white font-semibold">Medilo</span>, All Rights Reserved.
+      {/* ── BOTTOM BAR ── */}
+      <div style={{ background: "#080e2b", padding: "12px 24px" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
+          <p style={{ color: "rgba(190,210,255,0.7)", fontSize: 12, margin: 0 }}>
+            © 2024 <span style={{ color: "#ffffff", fontWeight: 600 }}>मेडिलो | Medilo</span> — सर्वाधिकार सुरक्षित | All Rights Reserved.
           </p>
-
-          {/* Bottom links */}
-          <nav aria-label="Footer links" className="flex items-center gap-5">
+          <nav style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
             {[
-              { label: "About Us", href: "/about" },
-              { label: "Events", href: "/blog" },
-              { label: "News", href: "/blog" },
-              { label: "Service", href: "/service" }
-            ].map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="text-blue-200 text-sm hover:text-white transition-colors duration-150"
+              { label: "Privacy Policy", href: "#" },
+              { label: "Terms of Service", href: "#" },
+              { label: "Sitemap", href: "#" },
+            ].map(item => (
+              <Link key={item.label} href={item.href}
+                style={{ color: "rgba(190,210,255,0.6)", fontSize: 12, textDecoration: "none", transition: "color 0.15s" }}
+                onMouseEnter={e => e.currentTarget.style.color = "#ffffff"}
+                onMouseLeave={e => e.currentTarget.style.color = "rgba(190,210,255,0.6)"}
               >
                 {item.label}
               </Link>
             ))}
           </nav>
-
         </div>
       </div>
 
       <style>{`
-        @media (max-width: 767px) {
-          footer {
-            text-align: center !important;
+        .footer-grid {
+          display: grid;
+          grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+          gap: 32px;
+        }
+        .footer-brand-col {}
+        .footer-col {}
+        .footer-logo-link {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          text-decoration: none;
+          margin-bottom: 0;
+        }
+        .footer-logo-icon {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background: #2783e3;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+        @media (max-width: 1023px) {
+          .footer-grid {
+            grid-template-columns: 1fr 1fr !important;
+            gap: 24px !important;
           }
-          footer .grid {
+        }
+        @media (max-width: 639px) {
+          .footer-grid {
             grid-template-columns: 1fr !important;
-          }
-          footer .grid > div {
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            justify-content: center !important;
-            text-align: center !important;
-            padding-left: 20px !important;
-            padding-right: 20px !important;
-            padding-top: 32px !important;
-            padding-bottom: 32px !important;
-          }
-          footer .grid > div:first-child {
-            margin-top: 0px !important;
-            padding-top: 48px !important;
-            padding-bottom: 48px !important;
-          }
-          footer ul {
-            align-items: center !important;
-            display: flex !important;
-            flex-direction: column !important;
-            width: 100% !important;
-          }
-          footer li {
-            justify-content: center !important;
-            text-align: center !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            width: 100% !important;
-          }
-          footer li a, footer li span {
-            text-align: center !important;
-            justify-content: center !important;
-            align-items: center !important;
-          }
-          footer .recent-post-item {
-            flex-direction: column !important;
-            align-items: center !important;
-            text-align: center !important;
-            gap: 8px !important;
-          }
-          footer .recent-post-item img {
-            margin: 0 auto 4px !important;
-          }
-          footer .flex-row {
-            justify-content: center !important;
-          }
-          footer .flex.items-center.gap-2 {
-            justify-content: center !important;
-          }
-          footer .max-w-7xl > div {
-            justify-content: center !important;
-            text-align: center !important;
-          }
-          footer a.flex {
-            justify-content: center !important;
+            gap: 20px !important;
           }
         }
       `}</style>
-
     </footer>
   );
 }

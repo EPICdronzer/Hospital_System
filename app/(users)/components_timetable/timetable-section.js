@@ -8,9 +8,9 @@ const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
 
 const DOCTORS = [
   {
-    id: "james-wilson",
-    name: "Dr. James Wilson",
-    specialty: "Cardiologist",
+    id: "jayesh-vyas",
+    name: "Dr. Jayesh Vyas",
+    specialty: "हृदय रोग | Cardiologist",
     img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80",
     schedule: {
       Monday:    { time: "09:00 – 13:00", status: "available" },
@@ -23,9 +23,9 @@ const DOCTORS = [
     },
   },
   {
-    id: "samuel-brooks",
-    name: "Dr. Samuel Brooks",
-    specialty: "General Physician",
+    id: "sandeep-banerjee",
+    name: "Dr. Sandeep Banerjee",
+    specialty: "सामान्य चिकित्सक | General Physician",
     img: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=400&q=80",
     schedule: {
       Monday:    { time: "08:00 – 12:00", status: "available" },
@@ -38,9 +38,9 @@ const DOCTORS = [
     },
   },
   {
-    id: "norma-pedric",
-    name: "Dr. Norma Pedric",
-    specialty: "Neurologist",
+    id: "nirmala-patel",
+    name: "Dr. Nirmala Patel",
+    specialty: "तंत्रिका रोग | Neurologist",
     img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80",
     schedule: {
       Monday:    { time: "11:00 – 15:00", status: "available" },
@@ -53,9 +53,9 @@ const DOCTORS = [
     },
   },
   {
-    id: "robert-chen",
-    name: "Dr. Robert Chen",
-    specialty: "Orthopedic Surgeon",
+    id: "rahul-choudhury",
+    name: "Dr. Rahul Choudhury",
+    specialty: "हड्डी रोग | Orthopedic Surgeon",
     img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80",
     schedule: {
       Monday:    { time: "Off",           status: "off" },
@@ -70,7 +70,7 @@ const DOCTORS = [
   {
     id: "aisha-khan",
     name: "Dr. Aisha Khan",
-    specialty: "Dermatologist",
+    specialty: "त्वचा रोग | Dermatologist",
     img: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=400&q=80",
     schedule: {
       Monday:    { time: "09:00 – 13:00", status: "available" },
@@ -83,9 +83,9 @@ const DOCTORS = [
     },
   },
   {
-    id: "michael-torres",
-    name: "Dr. Michael Torres",
-    specialty: "Oncologist",
+    id: "madhavan-nair",
+    name: "Dr. Madhavan Nair",
+    specialty: "कैंसर रोग | Oncologist",
     img: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=400&q=80",
     schedule: {
       Monday:    { time: "10:00 – 15:00", status: "available" },
@@ -100,7 +100,7 @@ const DOCTORS = [
   {
     id: "priya-sharma",
     name: "Dr. Priya Sharma",
-    specialty: "Gynecologist",
+    specialty: "स्त्री रोग | Gynecologist",
     img: "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=400&q=80",
     schedule: {
       Monday:    { time: "08:00 – 12:00", status: "available" },
@@ -113,9 +113,9 @@ const DOCTORS = [
     },
   },
   {
-    id: "david-lee",
-    name: "Dr. David Lee",
-    specialty: "Psychiatrist",
+    id: "devendra-lal",
+    name: "Dr. Devendra Lal",
+    specialty: "मनोचिकित्सक | Psychiatrist",
     img: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?auto=format&fit=crop&w=400&q=80",
     schedule: {
       Monday:    { time: "Off",           status: "off" },
@@ -144,18 +144,19 @@ export default function TimetableSection() {
       <div style={{ backgroundColor: "#ffffff", padding: "64px 24px 48px", textAlign: "center" }}>
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, marginBottom: 12 }}>
-            <div style={{ width: 28, height: 2, backgroundColor: "#2783e3" }} />
-            <span style={{ color: "#2783e3", fontWeight: 700, fontSize: 12, textTransform: "uppercase", letterSpacing: "0.12em" }}>
-              Weekly Schedule
+            <div style={{ width: 28, height: 2, backgroundColor: "#FF9933" }} />
+            <span style={{ color: "#FF9933", fontWeight: 700, fontSize: 12, textTransform: "uppercase", letterSpacing: "0.12em" }}>
+              साप्ताहिक समय सारणी | Weekly Schedule
             </span>
-            <div style={{ width: 28, height: 2, backgroundColor: "#2783e3" }} />
+            <div style={{ width: 28, height: 2, backgroundColor: "#128807" }} />
           </div>
           <h2 style={{ color: "#0d1b4b", fontWeight: 900, fontSize: 36, margin: "0 0 16px" }}>
-            Doctor Availability Timetable
+            डॉक्टर की उपलब्धता<br />
+            <span style={{ fontSize: 20, fontWeight: 700, color: "#6b7280" }}>Doctor Availability Timetable</span>
           </h2>
           <p style={{ color: "#6b7280", fontSize: 14.5, lineHeight: 1.75, margin: 0 }}>
-            Check our specialist doctors' weekly schedules and book your appointment at a convenient time. 
-            Click on a day to see who is available.
+            हमारे विशेषज्ञ डॉक्टरों का साप्ताहिक समय देखें और अपना अपॉइंटमेंट बुक करें।
+            Check our specialist doctors' weekly schedules and book your appointment at a convenient time.
           </p>
         </div>
       </div>
@@ -213,7 +214,7 @@ export default function TimetableSection() {
                 key={doc.id}
                 style={{
                   backgroundColor: "#ffffff",
-                  borderRadius: 8,
+                  borderRadius: 0,
                   overflow: "hidden",
                   boxShadow: "0 4px 18px rgba(0,0,0,0.07)",
                   opacity: isOff ? 0.6 : 1,
@@ -247,7 +248,7 @@ export default function TimetableSection() {
                     fontSize: 10,
                     fontWeight: 700,
                     padding: "3px 10px",
-                    borderRadius: 12,
+                    borderRadius: 0,
                     textTransform: "uppercase",
                     letterSpacing: "0.08em",
                   }}>
@@ -271,7 +272,7 @@ export default function TimetableSection() {
                     gap: 8,
                     padding: "10px 14px",
                     backgroundColor: isOff ? "#f3f4f6" : "#eff6ff",
-                    borderRadius: 6,
+                    borderRadius: 0,
                     marginBottom: 16,
                   }}>
                     <FaClock style={{ color: isOff ? "#9ca3af" : "#2783e3", fontSize: 13, flexShrink: 0 }} />
@@ -296,7 +297,7 @@ export default function TimetableSection() {
                         backgroundColor: "#0d1b4b",
                         color: "#ffffff",
                         padding: "10px 0",
-                        borderRadius: 24,
+                        borderRadius: 0,
                         fontWeight: 700,
                         fontSize: 13,
                         textDecoration: "none",
@@ -346,7 +347,7 @@ export default function TimetableSection() {
               style={{
                 display: "inline-flex", alignItems: "center", gap: 8,
                 backgroundColor: "#2783e3", color: "#ffffff",
-                padding: "13px 32px", borderRadius: 24,
+                padding: "13px 32px", borderRadius: 0,
                 fontWeight: 700, fontSize: 14, textDecoration: "none",
                 transition: "background 0.2s",
               }}
@@ -360,7 +361,7 @@ export default function TimetableSection() {
               style={{
                 display: "inline-flex", alignItems: "center", gap: 8,
                 backgroundColor: "rgba(255,255,255,0.1)", color: "#ffffff",
-                padding: "13px 32px", borderRadius: 24,
+                padding: "13px 32px", borderRadius: 0,
                 fontWeight: 700, fontSize: 14, textDecoration: "none",
                 border: "1.5px solid rgba(255,255,255,0.3)",
                 transition: "background 0.2s",

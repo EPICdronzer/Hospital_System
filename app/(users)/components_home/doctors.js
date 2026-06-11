@@ -8,13 +8,13 @@ import {
 } from "react-icons/fa";
 
 const DOCTORS = [
-  { id: "jayesh-vyas",      name: "Dr. Jayesh Vyas",      specialty: "हृदय रोग विशेषज्ञ (Cardiologist)",       img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80" },
-  { id: "sandeep-banerjee", name: "Dr. Sandeep Banerjee", specialty: "सामान्य चिकित्सक (General Physician)",   img: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=400&q=80" },
-  { id: "nirmala-patel",    name: "Dr. Nirmala Patel",    specialty: "तंत्रिका रोग विशेषज्ञ (Neurologist)",      img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80" },
+  { id: "jayesh-vyas",      name: "Dr. Jayesh Vyas",      specialty: "हृदय रोग विशेषज्ञ (Cardiologist)",       img: "/dr_jayesh_vyas.png" },
+  { id: "sandeep-banerjee", name: "Dr. Sandeep Banerjee", specialty: "सामान्य चिकित्सक (General Physician)",   img: "/dr_sandeep_banerjee.png" },
+  { id: "nirmala-patel",    name: "Dr. Nirmala Patel",    specialty: "तंत्रिका रोग विशेषज्ञ (Neurologist)",      img: "/dr_nirmala_patel.png" },
   { id: "rahul-choudhury",  name: "Dr. Rahul Choudhury",  specialty: "हड्डी रोग विशेषज्ञ (Orthopedic Surgeon)", img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80" },
   { id: "aisha-khan",       name: "Dr. Aisha Khan",       specialty: "त्वचा रोग विशेषज्ञ (Dermatologist)",      img: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=400&q=80" },
   { id: "madhavan-nair",    name: "Dr. Madhavan Nair",    specialty: "कैंसर रोग विशेषज्ञ (Oncologist)",          img: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=400&q=80" },
-  { id: "priya-sharma",     name: "Dr. Priya Sharma",     specialty: "स्त्री रोग विशेषज्ञ (Gynecologist)",        img: "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=400&q=80" },
+  { id: "priya-sharma",     name: "Dr. Priya Sharma",     specialty: "स्त्री रोग विशेषज्ञ (Gynecologist)",        img: "/dr_priya_sharma.png" },
   { id: "devendra-lal",     name: "Dr. Devendra Lal",     specialty: "मनोचिकित्सक (Psychiatrist)",        img: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?auto=format&fit=crop&w=400&q=80" },
 ];
 

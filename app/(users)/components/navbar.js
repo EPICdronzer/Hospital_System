@@ -222,6 +222,47 @@ export default function Navbar() {
             ))}
           </ul>
 
+          {/* ── Tablet Nav (768px–1023px) ── */}
+          <div
+            className="tablet-nav"
+            style={{
+              display: "none",
+              alignItems: "center",
+              gap: "4px",
+              flex: 1,
+              justifyContent: "center",
+              flexWrap: "wrap",
+            }}
+          >
+            {NAV_LINKS.map(({ label, href }) => (
+              <a
+                key={label}
+                href={href}
+                style={{
+                  color: "#333333",
+                  fontWeight: 600,
+                  fontSize: "12px",
+                  textDecoration: "none",
+                  fontFamily: "'Segoe UI', Arial, sans-serif",
+                  whiteSpace: "nowrap",
+                  padding: "6px 10px",
+                  borderRadius: "4px",
+                  transition: "background 0.15s, color 0.15s",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "#eff6ff";
+                  e.currentTarget.style.color = "#2783e3";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "transparent";
+                  e.currentTarget.style.color = "#333333";
+                }}
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+
           {/* ── Right Controls ── */}
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             {/* Search Button */}
@@ -380,18 +421,31 @@ export default function Navbar() {
         )}
 
         <style>{`
+          /* ── Desktop (≥1024px): full nav ── */
           @media (min-width: 1024px) {
             .desktop-nav { display: flex !important; }
             .mobile-toggle { display: none !important; }
             .mobile-drawer { display: none !important; }
             .desktop-search { display: flex !important; }
             .desktop-contact { display: inline-flex !important; }
+            .tablet-nav { display: none !important; }
           }
-          @media (max-width: 1023px) {
+          /* ── Tablet (768px–1023px): compact tab nav ── */
+          @media (min-width: 768px) and (max-width: 1023px) {
+            .desktop-nav { display: none !important; }
+            .mobile-toggle { display: none !important; }
+            .mobile-drawer { display: none !important; }
+            .desktop-search { display: none !important; }
+            .desktop-contact { display: none !important; }
+            .tablet-nav { display: flex !important; }
+          }
+          /* ── Mobile (<768px): hamburger ── */
+          @media (max-width: 767px) {
             .desktop-nav { display: none !important; }
             .mobile-toggle { display: block !important; }
             .desktop-search { display: none !important; }
             .desktop-contact { display: none !important; }
+            .tablet-nav { display: none !important; }
           }
         `}</style>
       </nav>

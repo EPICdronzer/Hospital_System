@@ -83,6 +83,17 @@ export default function Hero() {
             </div>
 
           </div>
+
+          {/* ✅ Doctor Image on Right (hidden on mobile/tablet) */}
+          <div className="absolute right-[38px] bottom-[-90px] hidden lg:block w-[480px] h-[650px] z-30 pointer-events-none">
+            <Image
+              src="/indian_doctor_hero.png"
+              alt="Indian Doctor Medilo"
+              fill
+              priority
+              className="object-contain object-bottom"
+            />
+          </div>
         </div>
 
         {/* 24 Hrs Badge — centered in the hero */}
