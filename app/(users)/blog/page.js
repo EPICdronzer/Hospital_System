@@ -9,7 +9,7 @@ export const metadata = {
 export default function BlogPage() {
   return (
     <main>
-      <SubHeader title="Latest Posts & Articles" currentPage="Blog" />
+      <SubHeader title="नवीनतम लेख | Latest Posts & Articles" currentPage="ब्लॉग | Blog" />
       <BlogList />
     </main>
   );

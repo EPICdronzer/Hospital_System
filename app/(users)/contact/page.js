@@ -10,7 +10,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <main>
-      <SubHeader title="Contact Us" currentPage="Contact" />
+      <SubHeader title="हमसे संपर्क करें | Contact Us" currentPage="संपर्क | Contact" />
       <ContactForm />
       <ContactMap />
     </main>

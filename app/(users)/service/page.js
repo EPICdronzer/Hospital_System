@@ -9,7 +9,7 @@ export const metadata = {
 export default function ServicePage() {
   return (
     <main>
-      <SubHeader title="Our Services" currentPage="Services" />
+      <SubHeader title="हमारी सेवाएं | Our Services" currentPage="सेवाएं | Services" />
       <ServiceList />
     </main>
   );

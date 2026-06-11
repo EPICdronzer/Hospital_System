@@ -7,6 +7,8 @@ import {
   FaChevronLeft, FaChevronRight,
 } from "react-icons/fa";
 
+const CACHE_BUSTER = typeof Date !== "undefined" ? Date.now() : "";
+
 const DOCTORS = [
   { id: "jayesh-vyas",      name: "Dr. Jayesh Vyas",      specialty: "हृदय रोग विशेषज्ञ (Cardiologist)",       img: "/dr_jayesh_vyas.png" },
   { id: "sandeep-banerjee", name: "Dr. Sandeep Banerjee", specialty: "सामान्य चिकित्सक (General Physician)",   img: "/dr_sandeep_banerjee.png" },
@@ -23,6 +25,7 @@ const CARD_HEIGHT = 360;
 
 /* ── Doctor card (shared) ── */
 function DoctorCard({ doc, isHovered, onEnter, onLeave }) {
+  const imgSrc = doc.img.startsWith("/") ? `${doc.img}?v=${CACHE_BUSTER}` : doc.img;
   return (
     <Link
       href={`/doctor/${doc.id}`}
@@ -46,7 +49,7 @@ function DoctorCard({ doc, isHovered, onEnter, onLeave }) {
         transition: "opacity 0.3s ease",
       }}>
         <img
-          src={doc.img} alt={doc.name}
+          src={imgSrc} alt={doc.name}
           style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }}
         />
         {/* Name tag at bottom */}
@@ -88,7 +91,7 @@ function DoctorCard({ doc, isHovered, onEnter, onLeave }) {
           marginBottom: 14, flexShrink: 0,
           boxShadow: "0 4px 20px rgba(0,0,0,0.25)",
         }}>
-          <img src={doc.img} alt={doc.name}
+          <img src={imgSrc} alt={doc.name}
             style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }} />
         </div>
 

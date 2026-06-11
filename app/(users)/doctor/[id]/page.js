@@ -6,124 +6,126 @@ import {
   FaCalendarAlt, FaStar, FaCheckCircle, FaAward, FaUserMd,
 } from "react-icons/fa";
 
+const CACHE_BUSTER = typeof Date !== "undefined" ? Date.now() : "";
+
 const DOCTORS_DATA = {
-  "james-wilson": {
-    name: "Dr. James Wilson",
-    specialty: "Cardiologist",
+  "jayesh-vyas": {
+    name: "Dr. Jayesh Vyas",
+    specialty: "हृदय रोग विशेषज्ञ | Cardiologist",
     degree: "MBBS, MD (Cardiology), FESC",
     experience: "14 Years",
     patients: "2,400+",
     rating: "4.9",
-    img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80",
-    phone: "+099 695 695 35",
-    email: "james.wilson@medilo.com",
+    img: "/dr_jayesh_vyas.png",
+    phone: "+91 99695 69535",
+    email: "jayesh.vyas@medilo.com",
     location: "Block A, 2nd Floor",
-    bio: "Dr. James Wilson is a board-certified cardiologist with over 14 years of experience in treating complex heart conditions. He specializes in interventional cardiology, heart failure management, and preventive cardiology. Dr. Wilson completed his fellowship at the prestigious All India Institute of Medical Sciences and has published over 30 peer-reviewed papers.",
+    bio: "डॉ. जयेश व्यास भारत के एक प्रसिद्ध हृदय रोग विशेषज्ञ हैं, जिन्हें जटिल हृदय रोगों के इलाज में 14 वर्षों से अधिक का अनुभव है। वह इंटरवेंशनल कार्डियोलॉजी और प्रिवेंटिव हार्ट केयर के विशेषज्ञ हैं। | Dr. Jayesh Vyas is a renowned cardiologist in India with over 14 years of experience. He specializes in interventional cardiology, heart failure management, and preventive heart care.",
     expertise: ["Interventional Cardiology", "Heart Failure Management", "Echocardiography", "Preventive Cardiology", "Cardiac Rehabilitation"],
     schedule: { Mon: "09:00–13:00", Tue: "10:00–14:00", Wed: "Off", Thu: "09:00–13:00", Fri: "08:00–12:00", Sat: "10:00–13:00", Sun: "Off" },
   },
-  "samuel-brooks": {
-    name: "Dr. Samuel Brooks",
-    specialty: "General Physician",
+  "sandeep-banerjee": {
+    name: "Dr. Sandeep Banerjee",
+    specialty: "सामान्य चिकित्सक | General Physician",
     degree: "MBBS, MD (Internal Medicine)",
     experience: "11 Years",
     patients: "5,100+",
     rating: "4.8",
-    img: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80",
-    phone: "+099 695 695 36",
-    email: "samuel.brooks@medilo.com",
+    img: "/dr_sandeep_banerjee.png",
+    phone: "+91 99695 69536",
+    email: "sandeep.banerjee@medilo.com",
     location: "Block B, Ground Floor",
-    bio: "Dr. Samuel Brooks is a highly respected general physician known for his patient-centric approach and diagnostic acuity. With 11 years of clinical practice, he handles a wide range of acute and chronic medical conditions, making him the first point of contact for thousands of patients each year.",
+    bio: "डॉ. संदीप बनर्जी एक अत्यधिक सम्मानित सामान्य चिकित्सक हैं जो अपनी सटीक नैदानिक क्षमता और समग्र रोगी देखभाल के लिए जाने जाते हैं। | Dr. Sandeep Banerjee is a highly respected general physician in India, known for his diagnostic accuracy and comprehensive patient care.",
     expertise: ["General Medicine", "Diabetes Management", "Hypertension", "Preventive Health", "Geriatric Care"],
     schedule: { Mon: "08:00–12:00", Tue: "Off", Wed: "09:00–14:00", Thu: "09:00–13:00", Fri: "10:00–14:00", Sat: "Off", Sun: "09:00–12:00" },
   },
-  "norma-pedric": {
-    name: "Dr. Norma Pedric",
-    specialty: "Neurologist",
+  "nirmala-patel": {
+    name: "Dr. Nirmala Patel",
+    specialty: "तंत्रिका रोग विशेषज्ञ | Neurologist",
     degree: "MBBS, DM (Neurology)",
     experience: "12 Years",
     patients: "1,800+",
     rating: "4.9",
-    img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
-    phone: "+099 695 695 37",
-    email: "norma.pedric@medilo.com",
+    img: "/dr_nirmala_patel.png",
+    phone: "+91 99695 69537",
+    email: "nirmala.patel@medilo.com",
     location: "Block A, 3rd Floor",
-    bio: "Dr. Norma Pedric is a distinguished neurologist with expertise in epilepsy, stroke management, and neurodegenerative disorders. Her compassionate care and thorough approach have made her one of the most sought-after specialists at Medilo. She completed her advanced training at NIMHANS, Bangalore.",
+    bio: "डॉ. निर्मला पटेल एक प्रख्यात तंत्रिका रोग विशेषज्ञ हैं, जिन्हें मिर्गी, स्ट्रोक प्रबंधन और न्यूरोलॉजिकल विकारों का व्यापक अनुभव है। उन्होंने बैंगलोर के प्रतिष्ठित निमहंस (NIMHANS) से प्रशिक्षण प्राप्त किया है। | Dr. Nirmala Patel is a distinguished neurologist in India, specializing in epilepsy, stroke management, and neurodegenerative disorders. She completed her advanced training at NIMHANS, Bangalore.",
     expertise: ["Epilepsy & Seizures", "Stroke Management", "Parkinson's Disease", "Multiple Sclerosis", "Headache & Migraine"],
     schedule: { Mon: "11:00–15:00", Tue: "09:00–13:00", Wed: "10:00–14:00", Thu: "Off", Fri: "09:00–12:00", Sat: "10:00–13:00", Sun: "Off" },
   },
-  "robert-chen": {
-    name: "Dr. Robert Chen",
-    specialty: "Orthopedic Surgeon",
+  "rahul-choudhury": {
+    name: "Dr. Rahul Choudhury",
+    specialty: "हड्डी रोग विशेषज्ञ | Orthopedic Surgeon",
     degree: "MBBS, MS (Orthopaedics)",
     experience: "16 Years",
     patients: "3,200+",
     rating: "4.8",
     img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80",
-    phone: "+099 695 695 38",
-    email: "robert.chen@medilo.com",
+    phone: "+91 99695 69538",
+    email: "rahul.choudhury@medilo.com",
     location: "Surgical Wing, 1st Floor",
-    bio: "Dr. Robert Chen is a veteran orthopedic surgeon with 16 years of surgical excellence. He specializes in joint replacement surgeries, sports injuries, and spinal disorders. Dr. Chen has performed over 2,000 successful surgeries and is renowned for his precision and swift recovery protocols.",
+    bio: "डॉ. राहुल चौधरी 16 वर्षों के सर्जिकल अनुभव के साथ एक अनुभवी हड्डी रोग विशेषज्ञ हैं। वह जॉइंट रिप्लेसमेंट सर्जरी, खेल चोटों और रीढ़ की हड्डी के विकारों के विशेषज्ञ हैं। | Dr. Rahul Choudhury is a veteran orthopedic surgeon with 16 years of surgical excellence. He specializes in joint replacement surgeries, sports injuries, and spinal disorders.",
     expertise: ["Knee & Hip Replacement", "Arthroscopic Surgery", "Sports Injuries", "Spinal Disorders", "Fracture Management"],
     schedule: { Mon: "Off", Tue: "10:00–14:00", Wed: "09:00–13:00", Thu: "08:00–12:00", Fri: "Off", Sat: "09:00–13:00", Sun: "10:00–13:00" },
   },
   "aisha-khan": {
     name: "Dr. Aisha Khan",
-    specialty: "Dermatologist",
+    specialty: "त्वचा रोग विशेषज्ञ | Dermatologist",
     degree: "MBBS, MD (Dermatology)",
     experience: "9 Years",
     patients: "4,600+",
     rating: "4.9",
     img: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80",
-    phone: "+099 695 695 39",
+    phone: "+91 99695 69539",
     email: "aisha.khan@medilo.com",
     location: "Block C, 2nd Floor",
-    bio: "Dr. Aisha Khan is a celebrated dermatologist who blends clinical dermatology with cosmetic expertise. Her 9 years of practice cover a wide spectrum from acne and eczema to advanced aesthetic procedures. Known for her meticulous attention to skin health, she is a favourite among patients of all age groups.",
+    bio: "डॉ. आयशा खान त्वचा और सौंदर्य संबंधी विकारों की विशेषज्ञ चिकित्सक हैं। वह चिकित्सकीय उपचार के साथ-साथ उन्नत कॉस्मेटिक प्रक्रियाओं की भी विशेषज्ञ हैं। | Dr. Aisha Khan is an expert dermatologist who blends clinical dermatology with advanced aesthetic procedures for skin, hair, and nail health.",
     expertise: ["Acne & Eczema", "Psoriasis Treatment", "Skin Allergy", "Hair Loss", "Cosmetic Dermatology"],
     schedule: { Mon: "09:00–13:00", Tue: "10:00–14:00", Wed: "Off", Thu: "09:00–13:00", Fri: "10:00–14:00", Sat: "Off", Sun: "Off" },
   },
-  "michael-torres": {
-    name: "Dr. Michael Torres",
-    specialty: "Oncologist",
+  "madhavan-nair": {
+    name: "Dr. Madhavan Nair",
+    specialty: "कैंसर रोग विशेषज्ञ | Oncologist",
     degree: "MBBS, MD, DM (Oncology)",
     experience: "18 Years",
     patients: "1,400+",
     rating: "4.9",
     img: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=600&q=80",
-    phone: "+099 695 695 40",
-    email: "michael.torres@medilo.com",
+    phone: "+91 99695 69540",
+    email: "madhavan.nair@medilo.com",
     location: "Oncology Wing, 4th Floor",
-    bio: "Dr. Michael Torres is one of India's leading oncologists with 18 years of dedication to cancer care. His expertise spans medical oncology, chemotherapy protocols, and targeted therapy. Dr. Torres leads Medilo's cancer care unit and has been instrumental in saving thousands of lives through early detection and precision treatments.",
+    bio: "डॉ. माधवन नायर कैंसर देखभाल, कीमोथेरेपी और लक्षित चिकित्सा (Targeted Therapy) में 18 वर्षों से अधिक का अनुभव रखने वाले भारत के अग्रणी ऑन्कोलॉजिस्ट हैं। | Dr. Madhavan Nair is a leading oncologist in India with over 18 years of dedication to cancer care, chemotherapy protocols, and immunotherapy.",
     expertise: ["Medical Oncology", "Chemotherapy", "Targeted Therapy", "Immunotherapy", "Cancer Screening"],
     schedule: { Mon: "10:00–15:00", Tue: "Off", Wed: "10:00–14:00", Thu: "Off", Fri: "09:00–13:00", Sat: "09:00–12:00", Sun: "Off" },
   },
   "priya-sharma": {
     name: "Dr. Priya Sharma",
-    specialty: "Gynecologist",
+    specialty: "स्त्री रोग विशेषज्ञ | Gynecologist",
     degree: "MBBS, MS (Obs & Gynae)",
     experience: "13 Years",
     patients: "6,200+",
     rating: "4.9",
-    img: "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=600&q=80",
-    phone: "+099 695 695 41",
+    img: "/dr_priya_sharma.png",
+    phone: "+91 99695 69541",
     email: "priya.sharma@medilo.com",
     location: "Maternity Block, 2nd Floor",
-    bio: "Dr. Priya Sharma is a highly experienced gynecologist and obstetrician who has guided over 6,200 patients through their health journeys. With 13 years of practice, she specialises in high-risk pregnancies, laparoscopic surgeries, and women's wellness. Her empathetic bedside manner makes her a trusted figure for women of all ages.",
+    bio: "डॉ. प्रिया शर्मा स्त्री रोग और प्रसूति विज्ञान की विशेषज्ञ हैं, जो उच्च जोखिम वाली गर्भावस्था और पीसीओएस (PCOS) प्रबंधन में 13 वर्षों का अनुभव रखती हैं। | Dr. Priya Sharma is a highly experienced obstetrician and gynecologist specializing in high-risk pregnancies, laparoscopic surgeries, and women's wellness.",
     expertise: ["High-Risk Pregnancy", "Laparoscopic Surgery", "PCOS Management", "Menopause Care", "Infertility Treatment"],
     schedule: { Mon: "08:00–12:00", Tue: "09:00–13:00", Wed: "10:00–14:00", Thu: "09:00–13:00", Fri: "Off", Sat: "Off", Sun: "09:00–12:00" },
   },
-  "david-lee": {
-    name: "Dr. David Lee",
-    specialty: "Psychiatrist",
+  "devendra-lal": {
+    name: "Dr. Devendra Lal",
+    specialty: "मनोचिकित्सक | Psychiatrist",
     degree: "MBBS, MD (Psychiatry)",
     experience: "10 Years",
     patients: "2,900+",
     rating: "4.8",
     img: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?auto=format&fit=crop&w=600&q=80",
-    phone: "+099 695 695 42",
-    email: "david.lee@medilo.com",
+    phone: "+91 99695 69542",
+    email: "devendra.lal@medilo.com",
     location: "Block D, 3rd Floor",
-    bio: "Dr. David Lee is a compassionate psychiatrist with a decade of experience in mental health care. He provides evidence-based treatments for depression, anxiety, OCD, and psychotic disorders. His holistic approach combines medication, therapy, and lifestyle counselling to promote lasting mental wellness.",
+    bio: "डॉ. देवेंद्र लाल एक संवेदनशील मनोचिकित्सक हैं जो अवसाद, तनाव, चिंता और मानसिक स्वास्थ्य विकारों के प्रबंधन में एक दशक का अनुभव रखते हैं। | Dr. Devendra Lal is a compassionate psychiatrist with a decade of clinical experience in managing anxiety, depression, and holistic mental wellness.",
     expertise: ["Depression & Anxiety", "OCD & Phobias", "Psychosis", "Addiction Medicine", "Child & Adolescent Psychiatry"],
     schedule: { Mon: "Off", Tue: "10:00–14:00", Wed: "09:00–13:00", Thu: "10:00–15:00", Fri: "09:00–13:00", Sat: "10:00–13:00", Sun: "Off" },
   },
@@ -131,7 +133,7 @@ const DOCTORS_DATA = {
 
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
-  const doc = DOCTORS_DATA[resolvedParams.id];
+  const doc = DOCTORS_DATA[resolvedParams.id] || DOCTORS_DATA["jayesh-vyas"];
   if (!doc) return { title: "Doctor – Medilo Healthcare" };
   return {
     title: `${doc.name} – ${doc.specialty} | Medilo Healthcare`,
@@ -141,8 +143,9 @@ export async function generateMetadata({ params }) {
 
 export default async function DoctorDetailPage({ params }) {
   const resolvedParams = await params;
-  const doc = DOCTORS_DATA[resolvedParams.id] || DOCTORS_DATA["james-wilson"];
+  const doc = DOCTORS_DATA[resolvedParams.id] || DOCTORS_DATA["jayesh-vyas"];
   const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  const imgSrc = doc.img.startsWith("/") ? `${doc.img}?v=${CACHE_BUSTER}` : doc.img;
 
   return (
     <main style={{ fontFamily: "'Segoe UI', sans-serif" }}>
@@ -158,7 +161,7 @@ export default async function DoctorDetailPage({ params }) {
             <div>
               {/* Photo */}
               <div style={{ borderRadius: 8, overflow: "hidden", height: 380, marginBottom: 0, boxShadow: "0 8px 30px rgba(0,0,0,0.1)" }}>
-                <img src={doc.img} alt={doc.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
+                <img src={imgSrc} alt={doc.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
               </div>
 
               {/* Social & Contact Card */}
@@ -342,26 +345,29 @@ export default async function DoctorDetailPage({ params }) {
               {Object.entries(DOCTORS_DATA)
                 .filter(([id]) => id !== resolvedParams.id)
                 .slice(0, 4)
-                .map(([id, d]) => (
-                  <Link key={id} href={`/doctor/${id}`} style={{
-                    display: "flex", alignItems: "center", gap: 12,
-                    backgroundColor: "#ffffff", padding: "12px 20px",
-                    borderRadius: 8, textDecoration: "none",
-                    boxShadow: "0 2px 10px rgba(0,0,0,0.06)",
-                    border: "1px solid #e2e8f0",
-                    transition: "all 0.2s",
-                    minWidth: 200,
-                  }}
-                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#2783e3"; e.currentTarget.style.boxShadow = "0 4px 16px rgba(39,131,227,0.15)"; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#e2e8f0"; e.currentTarget.style.boxShadow = "0 2px 10px rgba(0,0,0,0.06)"; }}
-                  >
-                    <img src={d.img} alt={d.name} style={{ width: 48, height: 48, borderRadius: "50%", objectFit: "cover", objectPosition: "top", flexShrink: 0 }} />
-                    <div>
-                      <p style={{ color: "#0d1b4b", fontWeight: 700, fontSize: 13.5, margin: "0 0 2px" }}>{d.name}</p>
-                      <p style={{ color: "#2783e3", fontSize: 11.5, fontWeight: 600, margin: 0 }}>{d.specialty}</p>
-                    </div>
-                  </Link>
-                ))}
+                .map(([id, d]) => {
+                  const otherImgSrc = d.img.startsWith("/") ? `${d.img}?v=${CACHE_BUSTER}` : d.img;
+                  return (
+                    <Link key={id} href={`/doctor/${id}`} style={{
+                      display: "flex", alignItems: "center", gap: 12,
+                      backgroundColor: "#ffffff", padding: "12px 20px",
+                      borderRadius: 8, textDecoration: "none",
+                      boxShadow: "0 2px 10px rgba(0,0,0,0.06)",
+                      border: "1px solid #e2e8f0",
+                      transition: "all 0.2s",
+                      minWidth: 200,
+                    }}
+                      onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#2783e3"; e.currentTarget.style.boxShadow = "0 4px 16px rgba(39,131,227,0.15)"; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#e2e8f0"; e.currentTarget.style.boxShadow = "0 2px 10px rgba(0,0,0,0.06)"; }}
+                    >
+                      <img src={otherImgSrc} alt={d.name} style={{ width: 48, height: 48, borderRadius: "50%", objectFit: "cover", objectPosition: "top", flexShrink: 0 }} />
+                      <div>
+                        <p style={{ color: "#0d1b4b", fontWeight: 700, fontSize: 13.5, margin: "0 0 2px" }}>{d.name}</p>
+                        <p style={{ color: "#2783e3", fontSize: 11.5, fontWeight: 600, margin: 0 }}>{d.specialty}</p>
+                      </div>
+                    </Link>
+                  );
+                })}
             </div>
           </div>
 

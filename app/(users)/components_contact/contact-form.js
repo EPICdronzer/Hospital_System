@@ -36,18 +36,18 @@ export default function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.comments) {
-      setStatus({ type: "error", message: "Please fill in all required fields (Name, Email, and Comments)." });
+      setStatus({ type: "error", message: "कृपया सभी आवश्यक फ़ील्ड (नाम, ईमेल और टिप्पणी) भरें। | Please fill in all required fields (Name, Email, and Comments)." });
       return;
     }
     
     if (formData.captchaInput.trim() !== captchaCode) {
-      setStatus({ type: "error", message: "Verification word does not match the CAPTCHA code. Please try again." });
+      setStatus({ type: "error", message: "सत्यापन कोड मेल नहीं खाता। कृपया पुनः प्रयास करें। | Verification word does not match the CAPTCHA code. Please try again." });
       generateCaptcha(); 
       setFormData(prev => ({ ...prev, captchaInput: "" }));
       return;
     }
 
-    setStatus({ type: "success", message: "Thank you! Your request has been sent successfully." });
+    setStatus({ type: "success", message: "धन्यवाद! आपका संदेश सफलतापूर्वक भेज दिया गया है। | Thank you! Your request has been sent successfully." });
     setFormData({
       name: "",
       email: "",
@@ -164,8 +164,8 @@ export default function ContactForm() {
                   <FaPhoneAlt style={{ fontSize: 18 }} />
                 </div>
                 <div>
-                  <h4 style={{ color: "#ffffff", fontWeight: 800, fontSize: 18, margin: "0 0 4px" }}>Emergency Call</h4>
-                  <p style={{ color: "#a5b4fc", fontSize: 13, margin: 0, fontWeight: 500 }}>24/7 - Support and easy</p>
+                  <h4 style={{ color: "#ffffff", fontWeight: 800, fontSize: 18, margin: "0 0 4px" }}>आपातकालीन कॉल | Emergency Call</h4>
+                  <p style={{ color: "#a5b4fc", fontSize: 13, margin: 0, fontWeight: 500 }}>24/7 - त्वरित सहायता | Support and Assistance</p>
                 </div>
               </div>
 
@@ -180,13 +180,14 @@ export default function ContactForm() {
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
               <div style={{ width: 28, height: 2, backgroundColor: "#2783e3" }} />
               <span style={{ color: "#2783e3", fontWeight: 700, fontSize: 12, textTransform: "uppercase", letterSpacing: "0.1em" }}>
-                CONTACT US
+                हमसे संपर्क करें | CONTACT US
               </span>
             </div>
 
             {/* Heading */}
             <h2 style={{ color: "#0d1b4b", fontWeight: 900, fontSize: 34, lineHeight: 1.25, margin: "0 0 28px" }}>
-              Meet Our Specialist This<br />Doctor Meet
+              हमारे विशेषज्ञ डॉक्टरों से मिलें<br />
+              <span style={{ fontSize: 20, fontWeight: 700, color: "#6b7280" }}>Meet Our Specialist Doctors</span>
             </h2>
 
             {/* Status Feedback */}
@@ -215,7 +216,7 @@ export default function ContactForm() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Your name"
+                  placeholder="आपका नाम | Your name"
                   required
                   style={{
                     backgroundColor: "#f3f4f6",
@@ -233,7 +234,7 @@ export default function ContactForm() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="Your email"
+                  placeholder="आपका ईमेल | Your email"
                   required
                   style={{
                     backgroundColor: "#f3f4f6",
@@ -251,7 +252,7 @@ export default function ContactForm() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  placeholder="Your Subject"
+                  placeholder="विषय | Your Subject"
                   style={{
                     backgroundColor: "#f3f4f6",
                     border: "none",
@@ -268,7 +269,7 @@ export default function ContactForm() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="Your phone"
+                  placeholder="आपका फ़ोन नंबर | Your phone"
                   style={{
                     backgroundColor: "#f3f4f6",
                     border: "none",
@@ -287,7 +288,7 @@ export default function ContactForm() {
                 name="comments"
                 value={formData.comments}
                 onChange={handleChange}
-                placeholder="Your comments"
+                placeholder="आपकी टिप्पणी | Your comments"
                 rows={5}
                 required
                 style={{
@@ -304,13 +305,13 @@ export default function ContactForm() {
               />
 
               {/* Captcha Verification */}
-              <div style={{ display: "flex", flexDirection: "column", gap: 8, maxWidth: 300 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8, maxWidth: 350 }}>
                 <input
                   type="text"
                   name="captchaInput"
                   value={formData.captchaInput}
                   onChange={handleChange}
-                  placeholder="Type the below word"
+                  placeholder="नीचे दिया गया कोड टाइप करें | Type the below word"
                   required
                   style={{
                     backgroundColor: "#f3f4f6",
@@ -360,7 +361,7 @@ export default function ContactForm() {
                       cursor: "pointer"
                     }}
                   >
-                    Refresh
+                    नया कोड | Refresh
                   </button>
                 </div>
               </div>
@@ -383,7 +384,7 @@ export default function ContactForm() {
                   onMouseEnter={(e) => e.target.style.backgroundColor = "#1667b9"}
                   onMouseLeave={(e) => e.target.style.backgroundColor = "#2783e3"}
                 >
-                  Send Request
+                  संदेश भेजें | Send Request
                 </button>
               </div>
 

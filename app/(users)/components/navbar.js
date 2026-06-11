@@ -421,8 +421,8 @@ export default function Navbar() {
         )}
 
         <style>{`
-          /* ── Desktop (≥1024px): full nav ── */
-          @media (min-width: 1024px) {
+          /* ── Desktop (≥1200px): full nav ── */
+          @media (min-width: 1200px) {
             .desktop-nav { display: flex !important; }
             .mobile-toggle { display: none !important; }
             .mobile-drawer { display: none !important; }
@@ -430,17 +430,8 @@ export default function Navbar() {
             .desktop-contact { display: inline-flex !important; }
             .tablet-nav { display: none !important; }
           }
-          /* ── Tablet (768px–1023px): compact tab nav ── */
-          @media (min-width: 768px) and (max-width: 1023px) {
-            .desktop-nav { display: none !important; }
-            .mobile-toggle { display: none !important; }
-            .mobile-drawer { display: none !important; }
-            .desktop-search { display: none !important; }
-            .desktop-contact { display: none !important; }
-            .tablet-nav { display: flex !important; }
-          }
-          /* ── Mobile (<768px): hamburger ── */
-          @media (max-width: 767px) {
+          /* ── Mobile & Tablet (<1200px): hamburger ── */
+          @media (max-width: 1199px) {
             .desktop-nav { display: none !important; }
             .mobile-toggle { display: block !important; }
             .desktop-search { display: none !important; }

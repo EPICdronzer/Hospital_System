@@ -3,6 +3,8 @@ import { useState } from "react";
 import Image from "next/image";
 import { FaCheckCircle, FaPhoneAlt, FaEnvelope, FaPlay } from "react-icons/fa";
 
+const CACHE_BUSTER = typeof Date !== "undefined" ? Date.now() : "";
+
 export default function Hero() {
   const [card1Hovered, setCard1Hovered] = useState(false);
   const [card2Hovered, setCard2Hovered] = useState(false);
@@ -15,7 +17,7 @@ export default function Hero() {
 
         {/* ✅ Background image — fixed filename: hero-bg.png.png */}
         <Image
-          src="/hero-bg.png.png"
+          src={`/hero-bg.png.png?v=${CACHE_BUSTER}`}
           alt="Medical hero background"
           fill
           priority
@@ -87,7 +89,7 @@ export default function Hero() {
           {/* ✅ Doctor Image on Right (hidden on mobile/tablet) */}
           <div className="absolute right-[38px] bottom-[-90px] hidden lg:block w-[480px] h-[650px] z-30 pointer-events-none">
             <Image
-              src="/indian_doctor_hero.png"
+              src={`/indian_doctor_hero.png?v=${CACHE_BUSTER}`}
               alt="Indian Doctor Medilo"
               fill
               priority

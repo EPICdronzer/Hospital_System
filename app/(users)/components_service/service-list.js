@@ -8,64 +8,64 @@ const SERVICES = [
   {
     id: "pharmacology",
     number: "01",
-    name: "Pharmacology",
-    desc: "Medical competitor research startup to financial",
+    name: "औषध विज्ञान | Pharmacology",
+    desc: "सर्वोत्तम दवाओं और चिकित्सा प्रणाली | Expert pharmaceutical care & treatment",
     Icon: FaMedkit,
     img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80"
   },
   {
     id: "orthopedic",
     number: "02",
-    name: "Orthopedic",
-    desc: "Medical competitor research startup to financial",
+    name: "हड्डी रोग | Orthopedic",
+    desc: "हड्डियों और जोड़ों की विशेषज्ञ चिकित्सा | Specialist bone & joint treatment",
     Icon: FaAmbulance,
     img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80"
   },
   {
     id: "hematology",
     number: "03",
-    name: "Hematology",
-    desc: "Medical competitor research startup to financial",
+    name: "रक्त विज्ञान | Hematology",
+    desc: "रक्त विकारों की विशेषज्ञ जाँच और उपचार | Expert blood disorder diagnosis",
     Icon: FaHeartbeat,
     img: "https://images.unsplash.com/photo-1579154261294-a101a257a837?auto=format&fit=crop&w=600&q=80"
   },
   {
     id: "plastic-surgery",
     number: "04",
-    name: "Plastic Surgery",
-    desc: "Medical competitor research startup to financial",
+    name: "प्लास्टिक सर्जरी | Plastic Surgery",
+    desc: "आधुनिक प्लास्टिक सर्जरी सेवाएं | Advanced reconstructive & cosmetic surgery",
     Icon: FaUserMd,
     img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80"
   },
   {
     id: "neurology",
     number: "05",
-    name: "Neurology",
-    desc: "Medical competitor research startup to financial",
+    name: "तंत्रिका रोग | Neurology",
+    desc: "मस्तिष्क और तंत्रिका रोगों की विशेषज्ञ चिकित्सा | Expert neurology & brain treatment",
     Icon: FaBrain,
     img: "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=600&q=80"
   },
   {
     id: "ophthalmology",
     number: "06",
-    name: "Ophthalmology",
-    desc: "Medical competitor research startup to financial",
+    name: "नेत्र विज्ञान | Ophthalmology",
+    desc: "आंखों की विशेषज्ञ जाँच और उपचार | Expert eye care & vision treatment",
     Icon: FaPills,
     img: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=600&q=80"
   },
   {
     id: "dental-care",
     number: "07",
-    name: "Dental Care",
-    desc: "Medical competitor research startup to financial",
+    name: "दंत चिकित्सा | Dental Care",
+    desc: "दांतों और मसूड़ों की संपूर्ण देखभाल | Complete teeth & gum care",
     Icon: FaTooth,
     img: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80"
   },
   {
     id: "service-check",
     number: "08",
-    name: "Service & Check",
-    desc: "Medical competitor research startup to financial",
+    name: "स्वास्थ्य जाँच | Health Check",
+    desc: "संपूर्ण शरीर जाँच और निवारक स्वास्थ्य सेवा | Full-body checkup & preventive care",
     Icon: FaSyringe,
     img: "https://images.unsplash.com/photo-1516841273335-e39b37888115?auto=format&fit=crop&w=600&q=80"
   }
@@ -107,18 +107,17 @@ export default function ServiceList() {
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
               <div style={{ width: 28, height: 2, backgroundColor: "#2783e3" }} />
               <span style={{ color: "#2783e3", fontWeight: 700, fontSize: 12, textTransform: "uppercase", letterSpacing: "0.10em" }}>
-                OUR BEST SERVICE
+                हमारी सेवाएं | OUR BEST SERVICE
               </span>
             </div>
             <h2 style={{ color: "#0d1b4b", fontWeight: 900, fontSize: 36, lineHeight: 1.2, margin: 0 }}>
-              High-Quality Services<br />This Doctor
+              उच्च गुणवत्ता सेवाएं<br />
+              <span style={{ fontSize: 22, fontWeight: 700, color: "#6b7280" }}>High-Quality Medical Services</span>
             </h2>
           </div>
           <div style={{ maxWidth: 520 }}>
             <p style={{ color: "#6b7280", fontSize: 14.5, lineHeight: 1.75, margin: 0 }}>
-              We are privileged to work with hundreds of future-thinking medial,
-              including many of the world's top hardware, software, and brands,
-              feel safe and comfortable in establishing.
+              हम सैकड़ों भारतीय परिवारों को बेहतर स्वास्थ्य सेवा प्रदान करने का सौभाग्य पाते हैं — We are privileged to serve thousands of Indian families with compassionate, expert medical care.
             </p>
           </div>
         </div>
@@ -256,10 +255,10 @@ export default function ServiceList() {
             <FaPrint style={{ fontSize: 13 }} />
           </div>
           <p style={{ color: "#0d1b4b", fontSize: 14, fontWeight: 700, margin: 0 }}>
-            Delivering tomorrow's health care for your family.{" "}
-            <span style={{ color: "#6b7280", fontWeight: 500 }}>medical this View </span>
+            कल की स्वास्थ्य सेवा — Delivering tomorrow's health care for your family.{" "}
+            <span style={{ color: "#6b7280", fontWeight: 500 }}>अधिक जानें | Know more </span>
             <Link href="/contact" style={{ color: "#2783e3", fontWeight: 800, textDecoration: "none" }}>
-              SEE MORE »
+              संपर्क करें | SEE MORE »
             </Link>
           </p>
         </div>

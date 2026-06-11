@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { FaClock, FaCalendarAlt, FaUserMd, FaPhone } from "react-icons/fa";
 
+const CACHE_BUSTER = typeof Date !== "undefined" ? Date.now() : "";
+
 const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
 const DOCTORS = [
@@ -11,7 +13,7 @@ const DOCTORS = [
     id: "jayesh-vyas",
     name: "Dr. Jayesh Vyas",
     specialty: "हृदय रोग | Cardiologist",
-    img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80",
+    img: "/dr_jayesh_vyas.png",
     schedule: {
       Monday:    { time: "09:00 – 13:00", status: "available" },
       Tuesday:   { time: "10:00 – 14:00", status: "available" },
@@ -26,7 +28,7 @@ const DOCTORS = [
     id: "sandeep-banerjee",
     name: "Dr. Sandeep Banerjee",
     specialty: "सामान्य चिकित्सक | General Physician",
-    img: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=400&q=80",
+    img: "/dr_sandeep_banerjee.png",
     schedule: {
       Monday:    { time: "08:00 – 12:00", status: "available" },
       Tuesday:   { time: "Off",           status: "off" },
@@ -41,7 +43,7 @@ const DOCTORS = [
     id: "nirmala-patel",
     name: "Dr. Nirmala Patel",
     specialty: "तंत्रिका रोग | Neurologist",
-    img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80",
+    img: "/dr_nirmala_patel.png",
     schedule: {
       Monday:    { time: "11:00 – 15:00", status: "available" },
       Tuesday:   { time: "09:00 – 13:00", status: "available" },
@@ -101,7 +103,7 @@ const DOCTORS = [
     id: "priya-sharma",
     name: "Dr. Priya Sharma",
     specialty: "स्त्री रोग | Gynecologist",
-    img: "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=400&q=80",
+    img: "/dr_priya_sharma.png",
     schedule: {
       Monday:    { time: "08:00 – 12:00", status: "available" },
       Tuesday:   { time: "09:00 – 13:00", status: "available" },
@@ -234,7 +236,7 @@ export default function TimetableSection() {
                 {/* Image */}
                 <div style={{ height: 200, overflow: "hidden", position: "relative" }}>
                   <img
-                    src={doc.img}
+                    src={doc.img.startsWith("/") ? `${doc.img}?v=${CACHE_BUSTER}` : doc.img}
                     alt={doc.name}
                     style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
                   />

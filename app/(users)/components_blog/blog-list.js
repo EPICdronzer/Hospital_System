@@ -7,55 +7,55 @@ import { FaUser, FaRegComment, FaChevronRight } from "react-icons/fa";
 const POSTS = [
   {
     id: 1,
-    title: "Medical Of This Working Health Blog",
-    excerpt: "Medical standard chunk of| nibh velit auctor aliquet sollic tudin.",
+    title: "डिजिटल स्वास्थ्य और चिकित्सा सेवाएँ | Digital Health & Medical Care",
+    excerpt: "भारतीय स्वास्थ्य सेवा के क्षेत्र में तकनीकी प्रगति और सुधार | Tech advancements and improvements in the Indian healthcare landscape.",
     img: "https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&w=600&q=80",
-    category: "MEDICAL",
+    category: "चिकित्सा | MEDICAL",
     date: "May 02",
     author: "Admin"
   },
   {
     id: 2,
-    title: "There Is Only One Thing That Is Hospital.",
-    excerpt: "Medical standard chunk of| nibh velit auctor aliquet sollic tudin.",
+    title: "भारतीय स्वास्थ्य देखभाल प्रणाली का भविष्य | Future of Indian Healthcare",
+    excerpt: "निवारक स्वास्थ्य सेवा और कल्याण के महत्व पर एक मार्गदर्शिका | A complete guide on the vital importance of preventive health and wellness.",
     img: "https://images.unsplash.com/photo-1516841273335-e39b37888115?auto=format&fit=crop&w=600&q=80",
-    category: "MEDICAL",
+    category: "स्वास्थ्य | HEALTH",
     date: "April 12",
     author: "Admin"
   },
   {
     id: 3,
-    title: "This Working World and Infection Prevention.",
-    excerpt: "Medical standard chunk of| nibh velit auctor aliquet sollic tudin.",
+    title: "कार्यस्थल पर संक्रमण की रोकथाम और सुरक्षा | Infection Prevention at Work",
+    excerpt: "स्वच्छता और स्वास्थ्य सुरक्षा बनाए रखने के आवश्यक उपाय | Essential guidelines to maintain a safe, hygienic, and sterile workspace.",
     img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
-    category: "MEDICAL",
+    category: "कल्याण | WELLNESS",
     date: "Jan 02",
     author: "Admin"
   },
   {
     id: 4,
-    title: "Medical Of This Working Health Blog",
-    excerpt: "Medical standard chunk of| nibh velit auctor aliquet sollic tudin.",
+    title: "सामुदायिक स्वास्थ्य सेवा और ग्रामीण विकास | Community Health Initiatives",
+    excerpt: "दूरदराज के क्षेत्रों में प्राथमिक चिकित्सा सेवाओं की सुगमता | Bridging the gap in accessibility of primary care services in rural India.",
     img: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80",
-    category: "MEDICAL",
+    category: "चिकित्सा | MEDICAL",
     date: "June 02",
     author: "Admin"
   },
   {
     id: 5,
-    title: "This Working World and Infection Prevention.",
-    excerpt: "Medical standard chunk of| nibh velit auctor aliquet sollic tudin.",
+    title: "महामारी सुरक्षा एवं स्वास्थ्य प्रबंधन | Pandemic Safety Protocols",
+    excerpt: "सार्वजनिक स्थानों और अस्पतालों में सुरक्षा नियमों का पालन | Key updates and safety practices to prevent transmission and ensure safety.",
     img: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=600&q=80",
-    category: "MEDICAL",
+    category: "स्वास्थ्य | HEALTH",
     date: "May 22",
     author: "Admin"
   },
   {
     id: 6,
-    title: "Medical Of This Working Health Blog",
-    excerpt: "Medical standard chunk of| nibh velit auctor aliquet sollic tudin.",
+    title: "टेलीमेडिसिन: घर बैठे ऑनलाइन चिकित्सा परामर्श | Rise of Telemedicine",
+    excerpt: "डिजिटल माध्यम से देश के प्रमुख डॉक्टरों से संपर्क करने का तरीका | Connecting you to top medical experts instantly via online consultations.",
     img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
-    category: "MEDICAL",
+    category: "चिकित्सा | MEDICAL",
     date: "Feb 10",
     author: "Admin"
   }
@@ -87,12 +87,13 @@ export default function BlogList() {
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, marginBottom: 10 }}>
             <div style={{ width: 18, height: 2, backgroundColor: "#2783e3" }} />
             <span style={{ color: "#2783e3", fontWeight: 700, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.12em" }}>
-              OUR LARGEST BLOG
+              हमारा ब्लॉग | OUR LARGEST BLOG
             </span>
             <div style={{ width: 18, height: 2, backgroundColor: "#2783e3" }} />
           </div>
           <h2 style={{ color: "#0d1b4b", fontWeight: 900, fontSize: 34, lineHeight: 1.25, margin: 0 }}>
-            Latest Posts & Articles
+            नवीनतम लेख और समाचार<br />
+            <span style={{ fontSize: 18, fontWeight: 700, color: "#6b7280" }}>Latest Posts & Articles</span>
           </h2>
         </div>
 
@@ -182,10 +183,10 @@ export default function BlogList() {
                   {/* Meta (Author + Comments) */}
                   <div style={{ display: "flex", gap: 16, marginBottom: 14, color: "#6b7280", fontSize: 12.5, fontWeight: 500 }}>
                     <span style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                      <FaUser style={{ color: "#2783e3", fontSize: 11 }} /> By: {author}
+                      <FaUser style={{ color: "#2783e3", fontSize: 11 }} /> लेखक | By: {author}
                     </span>
                     <span style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                      <FaRegComment style={{ color: "#2783e3", fontSize: 12 }} /> Comment
+                      <FaRegComment style={{ color: "#2783e3", fontSize: 12 }} /> टिप्पणी | Comment
                     </span>
                   </div>
 
@@ -220,7 +221,7 @@ export default function BlogList() {
                     fontWeight: 700,
                     fontSize: 13.5
                   }}>
-                    Read More <FaChevronRight style={{ fontSize: 9 }} />
+                    और पढ़ें | Read More <FaChevronRight style={{ fontSize: 9 }} />
                   </span>
 
                 </div>

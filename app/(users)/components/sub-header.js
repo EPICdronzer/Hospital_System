@@ -63,7 +63,7 @@ export default function SubHeader({ title, currentPage }) {
           <Link href="/" style={{ color: "#ffffff", textDecoration: "none", transition: "color 0.2s" }}
             onMouseEnter={(e) => e.target.style.color = "#2783e3"}
             onMouseLeave={(e) => e.target.style.color = "#ffffff"}>
-            Home
+            मुख्य पृष्ठ | Home
           </Link>
           <span>»</span>
           <span style={{ color: "#2783e3" }}>{currentPage}</span>
