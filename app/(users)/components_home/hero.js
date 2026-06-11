@@ -16,12 +16,10 @@ export default function Hero() {
       <div className="relative overflow-hidden min-h-[500px] pb-[90px] flex items-center max-sm:min-h-[420px] max-sm:pb-[120px]">
 
         {/* ✅ Background image — fixed filename: hero-bg.png.png */}
-        <Image
+        <img
           src={`/hero-bg.png.png?v=${CACHE_BUSTER}`}
           alt="Medical hero background"
-          fill
-          priority
-          className="object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center"
           style={{ zIndex: 0 }}
         />
 
@@ -88,12 +86,10 @@ export default function Hero() {
 
           {/* ✅ Doctor Image on Right (hidden on mobile/tablet) */}
           <div className="absolute right-[38px] bottom-[-90px] hidden lg:block w-[480px] h-[650px] z-30 pointer-events-none">
-            <Image
+            <img
               src={`/indian_doctor_hero.png?v=${CACHE_BUSTER}`}
               alt="Indian Doctor Medilo"
-              fill
-              priority
-              className="object-contain object-bottom"
+              className="absolute inset-0 w-full h-full object-contain object-bottom"
             />
           </div>
         </div>
