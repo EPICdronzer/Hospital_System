@@ -87,7 +87,7 @@ export default function Hero() {
           </div>
 
           {/* ✅ Doctor Image on Right (hidden on mobile/tablet) */}
-          <div className="absolute right-[38px] bottom-[-90px] hidden lg:block w-[480px] h-[650px] z-30 pointer-events-none">
+          <div className="absolute right-[38px] bottom-[-90px] hidden lg:block w-[580px] h-[550px] z-30 pointer-events-none">
             <img
               src={cacheBuster ? `/indian_doctor_hero.png?v=${cacheBuster}` : "/indian_doctor_hero.png"}
               alt="Indian Doctor Medilo"
