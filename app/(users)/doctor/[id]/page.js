@@ -149,6 +149,40 @@ export default async function DoctorDetailPage({ params }) {
 
   return (
     <main style={{ fontFamily: "'Segoe UI', sans-serif" }}>
+      <style>{`
+        .doc-social-link {
+          background-color: rgba(255,255,255,0.12) !important;
+          transition: background-color 0.2s !important;
+        }
+        .doc-social-link:hover {
+          background-color: #2783e3 !important;
+        }
+        .doc-btn-book {
+          background-color: #2783e3 !important;
+          transition: background-color 0.2s !important;
+        }
+        .doc-btn-book:hover {
+          background-color: #1a6fd0 !important;
+        }
+        .doc-btn-time {
+          color: #0d1b4b !important;
+          border: 1.5px solid #e2e8f0 !important;
+          transition: all 0.2s !important;
+        }
+        .doc-btn-time:hover {
+          border-color: #2783e3 !important;
+          color: #2783e3 !important;
+        }
+        .doc-other-card {
+          border: 1px solid #e2e8f0 !important;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.06) !important;
+          transition: all 0.2s !important;
+        }
+        .doc-other-card:hover {
+          border-color: #2783e3 !important;
+          box-shadow: 0 4px 16px rgba(39,131,227,0.15) !important;
+        }
+      `}</style>
       <SubHeader title={doc.name} currentPage={`Doctors / ${doc.name}`} />
 
       <section style={{ backgroundColor: "#f8fafc", padding: "72px 0 100px" }}>
@@ -174,15 +208,11 @@ export default async function DoctorDetailPage({ params }) {
                 {/* Socials */}
                 <div style={{ display: "flex", gap: 10, marginBottom: 24 }}>
                   {[FaFacebookF, FaTwitter, FaPinterestP, FaInstagram].map((Icon, i) => (
-                    <a key={i} href="#" style={{
+                    <a key={i} href="#" className="doc-social-link" style={{
                       width: 34, height: 34, borderRadius: "50%",
-                      backgroundColor: "rgba(255,255,255,0.12)",
                       display: "flex", alignItems: "center", justifyContent: "center",
                       color: "#ffffff", textDecoration: "none", fontSize: 13,
-                      transition: "background 0.2s",
                     }}
-                      onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#2783e3"}
-                      onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.12)"}
                     >
                       <Icon />
                     </a>
@@ -263,31 +293,24 @@ export default async function DoctorDetailPage({ params }) {
 
               {/* Book Appointment CTA */}
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                <Link href="/contact" style={{
+                <Link href="/contact" className="doc-btn-book" style={{
                   display: "inline-flex", alignItems: "center", gap: 8,
-                  backgroundColor: "#2783e3", color: "#ffffff",
+                  color: "#ffffff",
                   padding: "13px 32px", borderRadius: 24,
                   fontWeight: 700, fontSize: 14, textDecoration: "none",
                   boxShadow: "0 4px 14px rgba(39,131,227,0.35)",
-                  transition: "background 0.2s",
                 }}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#1a6fd0"}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#2783e3"}
                 >
                   <FaCalendarAlt style={{ fontSize: 13 }} />
                   Book Appointment
                 </Link>
-                <Link href="/timetable" style={{
+                <Link href="/timetable" className="doc-btn-time" style={{
                   display: "inline-flex", alignItems: "center", gap: 8,
-                  backgroundColor: "#ffffff", color: "#0d1b4b",
+                  backgroundColor: "#ffffff",
                   padding: "13px 32px", borderRadius: 24,
                   fontWeight: 700, fontSize: 14, textDecoration: "none",
-                  border: "1.5px solid #e2e8f0",
                   boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
-                  transition: "all 0.2s",
                 }}
-                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#2783e3"; e.currentTarget.style.color = "#2783e3"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#e2e8f0"; e.currentTarget.style.color = "#0d1b4b"; }}
                 >
                   <FaClock style={{ fontSize: 13 }} />
                   See Timetable
@@ -348,17 +371,12 @@ export default async function DoctorDetailPage({ params }) {
                 .map(([id, d]) => {
                   const otherImgSrc = d.img.startsWith("/") ? `${d.img}?v=${CACHE_BUSTER}` : d.img;
                   return (
-                    <Link key={id} href={`/doctor/${id}`} style={{
+                    <Link key={id} href={`/doctor/${id}`} className="doc-other-card" style={{
                       display: "flex", alignItems: "center", gap: 12,
                       backgroundColor: "#ffffff", padding: "12px 20px",
                       borderRadius: 8, textDecoration: "none",
-                      boxShadow: "0 2px 10px rgba(0,0,0,0.06)",
-                      border: "1px solid #e2e8f0",
-                      transition: "all 0.2s",
                       minWidth: 200,
                     }}
-                      onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#2783e3"; e.currentTarget.style.boxShadow = "0 4px 16px rgba(39,131,227,0.15)"; }}
-                      onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#e2e8f0"; e.currentTarget.style.boxShadow = "0 2px 10px rgba(0,0,0,0.06)"; }}
                     >
                       <img src={otherImgSrc} alt={d.name} style={{ width: 48, height: 48, borderRadius: "50%", objectFit: "cover", objectPosition: "top", flexShrink: 0 }} />
                       <div>

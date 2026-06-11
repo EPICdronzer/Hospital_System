@@ -340,11 +340,11 @@ export default function TimetableSection() {
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 14, marginBottom: 20 }}>
             <FaCalendarAlt style={{ color: "#2783e3", fontSize: 28 }} />
             <h3 style={{ color: "#ffffff", fontWeight: 800, fontSize: 24, margin: 0 }}>
-              Need an Appointment?
+              अपॉइंटमेंट चाहिए? | Need an Appointment?
             </h3>
           </div>
           <p style={{ color: "rgba(255,255,255,0.7)", fontSize: 14, lineHeight: 1.7, margin: "0 0 28px" }}>
-            Our scheduling team is available 24/7 to help you find the right time and specialist for your needs.
+            हमारी टीम आपकी सहायता के लिए 24/7 उपलब्ध है ताकि आपको सही समय और विशेषज्ञ मिल सके। | Our scheduling team is available 24/7 to help you find the right time and specialist for your needs.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <Link
@@ -359,10 +359,10 @@ export default function TimetableSection() {
               onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#1a6fd0"}
               onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#2783e3"}
             >
-              Contact Us »
+              संपर्क करें | Contact Us »
             </Link>
             <a
-              href="tel:+09969569535"
+              href="tel:+919969569535"
               style={{
                 display: "inline-flex", alignItems: "center", gap: 8,
                 backgroundColor: "rgba(255,255,255,0.1)", color: "#ffffff",
@@ -375,7 +375,7 @@ export default function TimetableSection() {
               onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)"}
             >
               <FaPhone style={{ fontSize: 12 }} />
-              Call Now
+              अभी कॉल करें | Call Now
             </a>
           </div>
         </div>

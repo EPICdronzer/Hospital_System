@@ -295,9 +295,9 @@ export default function AboutUs() {
             <div style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: 32 }}>
               <FaCheckCircle style={{ color: "#0d1b4b", fontSize: 16, marginTop: 2, flexShrink: 0 }} />
               <p style={{ color: "#6b7280", fontSize: 13, lineHeight: 1.6, margin: 0 }}>
-                There are many variations of pass available this medical service the team{" "}
+                हमारी चिकित्सा सेवाएं और विशेषज्ञों की टीम हमेशा आपकी सहायता के लिए तैयार हैं। | Our medical services and expert team are always ready to support you.{" "}
                 <a href="/contact" onClick={(e) => { e.stopPropagation(); }} style={{ color: "#2783e3", fontWeight: 700, textDecoration: "none" }}>
-                  READ MORE +
+                  अधिक जानकारी | READ MORE +
                 </a>
               </p>
             </div>
@@ -345,10 +345,10 @@ export default function AboutUs() {
         }}>
           <div style={{ padding: "32px 40px" }}>
             <h3 style={{ color: "#0d1b4b", fontWeight: 900, fontSize: 22, margin: "0 0 8px" }}>
-              Get In Touch With Medilo Support
+              मेडिलो सहायता से संपर्क करें | Contact Medilo Support
             </h3>
             <p style={{ color: "#6b7280", fontSize: 13.5, lineHeight: 1.6, margin: "0 0 24px" }}>
-              Have questions about our medical programs, specialists, or want to schedule an urgent consultation? Speak directly to our support desk right now.
+              क्या आपके पास हमारे चिकित्सा कार्यक्रमों, विशेषज्ञों के बारे में प्रश्न हैं, या कोई तत्काल परामर्श बुक करना चाहते हैं? हमारे सहायता डेस्क से संपर्क करें। | Have questions about our medical programs, specialists, or want to schedule an urgent consultation? Speak directly to our support desk right now.
             </p>
             
             <div className="abus-contact-grid">
@@ -358,10 +358,10 @@ export default function AboutUs() {
                   <div style={{ width: 36, height: 36, borderRadius: "50%", backgroundColor: "#eff6ff", display: "flex", alignItems: "center", justifyCenter: "center", color: "#2783e3", flexShrink: 0, paddingLeft: 10 }}>
                     <FaPhoneAlt style={{ fontSize: 14 }} />
                   </div>
-                  <h4 style={{ color: "#0d1b4b", fontWeight: 800, fontSize: 15, margin: 0 }}>Call Center</h4>
+                  <h4 style={{ color: "#0d1b4b", fontWeight: 800, fontSize: 15, margin: 0 }}>कॉल सेंटर | Call Center</h4>
                 </div>
-                <p style={{ margin: "0 0 4px", fontSize: 11, color: "#6b7280" }}>Hotline Support 24/7</p>
-                <a href="tel:+09969569535" style={{ color: "#0d1b4b", fontWeight: 800, fontSize: 14, textDecoration: "none" }}>+099 695 695 35</a>
+                <p style={{ margin: "0 0 4px", fontSize: 11, color: "#6b7280" }}>24/7 हेल्पलाइन | Helpline Support</p>
+                <a href="tel:+919969569535" style={{ color: "#0d1b4b", fontWeight: 800, fontSize: 14, textDecoration: "none" }}>+91 99695 69535</a>
               </div>
 
               {/* Email Support */}
@@ -370,10 +370,10 @@ export default function AboutUs() {
                   <div style={{ width: 36, height: 36, borderRadius: "50%", backgroundColor: "#eff6ff", display: "flex", alignItems: "center", justifyCenter: "center", color: "#2783e3", flexShrink: 0, paddingLeft: 10 }}>
                     <FaEnvelope style={{ fontSize: 14 }} />
                   </div>
-                  <h4 style={{ color: "#0d1b4b", fontWeight: 800, fontSize: 15, margin: 0 }}>Email Us</h4>
+                  <h4 style={{ color: "#0d1b4b", fontWeight: 800, fontSize: 15, margin: 0 }}>ईमेल भेजें | Email Us</h4>
                 </div>
-                <p style={{ margin: "0 0 4px", fontSize: 11, color: "#6b7280" }}>Direct Email Desk</p>
-                <a href="mailto:support@medilo.com" style={{ color: "#0d1b4b", fontWeight: 800, fontSize: 14, textDecoration: "none" }}>support@medilo.com</a>
+                <p style={{ margin: "0 0 4px", fontSize: 11, color: "#6b7280" }}>सहायता ईमेल | Support Email</p>
+                <a href="mailto:support@medilo.in" style={{ color: "#0d1b4b", fontWeight: 800, fontSize: 14, textDecoration: "none" }}>support@medilo.in</a>
               </div>
 
               {/* Clinic Visit */}
@@ -382,17 +382,17 @@ export default function AboutUs() {
                   <div style={{ width: 36, height: 36, borderRadius: "50%", backgroundColor: "#eff6ff", display: "flex", alignItems: "center", justifyCenter: "center", color: "#2783e3", flexShrink: 0, paddingLeft: 10 }}>
                     <FaMapMarkerAlt style={{ fontSize: 14 }} />
                   </div>
-                  <h4 style={{ color: "#0d1b4b", fontWeight: 800, fontSize: 15, margin: 0 }}>Our Location</h4>
+                  <h4 style={{ color: "#0d1b4b", fontWeight: 800, fontSize: 15, margin: 0 }}>हमारा स्थान | Our Location</h4>
                 </div>
-                <p style={{ margin: "0 0 4px", fontSize: 11, color: "#6b7280" }}>Main Hospital Block</p>
-                <span style={{ color: "#0d1b4b", fontWeight: 800, fontSize: 14 }}>12 Medical Road, NY</span>
+                <p style={{ margin: "0 0 4px", fontSize: 11, color: "#6b7280" }}>मुख्य अस्पताल ब्लॉक | Main Hospital Block</p>
+                <span style={{ color: "#0d1b4b", fontWeight: 800, fontSize: 14 }}>कनॉट प्लेस, नई दिल्ली - 110001 | Connaught Place, New Delhi - 110001</span>
               </div>
             </div>
 
             <div style={{ marginTop: 24, padding: "16px 20px", backgroundColor: "#eff6ff", borderRadius: 6, display: "flex", alignItems: "center", gap: 12 }}>
               <FaRegClock style={{ color: "#2783e3", fontSize: 18 }} />
               <p style={{ color: "#1e3a8a", fontSize: 12.5, fontWeight: 600, margin: 0 }}>
-                Our emergency trauma units are fully staffed 24/7/365. For immediate dispatch, call the hotline listed above.
+                हमारी आपातकालीन ट्रॉमा इकाइयाँ 24/7/365 कार्यरत हैं। तत्काल सहायता के लिए ऊपर दिए गए हेल्पलाइन पर कॉल करें। | Our emergency trauma units are fully staffed 24/7/365. For immediate dispatch, call the hotline listed above.
               </p>
             </div>
           </div>
