@@ -26,6 +26,20 @@ export default function AboutPage() {
               grid-template-columns: 1.15fr 0.85fr;
               gap: 48px;
             }
+            .about-btn-call {
+              background-color: #FF9933;
+              transition: background-color 0.2s;
+            }
+            .about-btn-call:hover {
+              background-color: #e07f24 !important;
+            }
+            .about-btn-enquiry {
+              opacity: 1;
+              transition: opacity 0.2s;
+            }
+            .about-btn-enquiry:hover {
+              opacity: 0.8 !important;
+            }
             @media (max-width: 1023px) {
               .about-widgets-grid {
                 grid-template-columns: 1fr !important;
@@ -80,25 +94,20 @@ export default function AboutPage() {
               </div>
               {/* Call CTA Action */}
               <div style={{ display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap" }}>
-                <a href="tel:+919969569535" style={{
+                <a href="tel:+919969569535" className="about-btn-call" style={{
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "8px",
-                  backgroundColor: "#FF9933",
                   color: "#ffffff",
                   fontWeight: 700,
                   fontSize: "14px",
                   padding: "12px 28px",
                   textDecoration: "none",
-                  boxShadow: "0 4px 12px rgba(255,153,51,0.3)",
-                  transition: "background 0.2s"
-                }}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#e07f24"}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#FF9933"}
-                >
+                  boxShadow: "0 4px 12px rgba(255,153,51,0.3)"
+                }}>
                   कॉल करें | Call Now
                 </a>
-                <a href="/contact" style={{
+                <a href="/contact" className="about-btn-enquiry" style={{
                   display: "inline-flex",
                   alignItems: "center",
                   color: "#ffffff",
@@ -106,12 +115,8 @@ export default function AboutPage() {
                   fontSize: "13.5px",
                   textDecoration: "none",
                   borderBottom: "1.5px solid #ffffff",
-                  paddingBottom: "2px",
-                  transition: "opacity 0.2s"
-                }}
-                  onMouseEnter={(e) => e.currentTarget.style.opacity = 0.8}
-                  onMouseLeave={(e) => e.currentTarget.style.opacity = 1}
-                >
+                  paddingBottom: "2px"
+                }}>
                   पूछताछ करें | Enquiry »
                 </a>
               </div>

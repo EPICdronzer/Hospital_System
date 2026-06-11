@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { FaPhoneAlt, FaEnvelopeOpen } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelopeOpen, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -146,7 +146,7 @@ export default function ContactForm() {
                 gap: 20,
                 boxShadow: "0 8px 25px rgba(13,27,75,0.15)",
                 marginTop: 30,
-                marginBottom: 30,
+                marginBottom: 16,
                 zIndex: 2
               }}>
                 <div style={{
@@ -167,6 +167,66 @@ export default function ContactForm() {
                   <h4 style={{ color: "#ffffff", fontWeight: 800, fontSize: 18, margin: "0 0 4px" }}>आपातकालीन कॉल | Emergency Call</h4>
                   <p style={{ color: "#a5b4fc", fontSize: 13, margin: 0, fontWeight: 500 }}>24/7 - त्वरित सहायता | Support and Assistance</p>
                 </div>
+              </div>
+
+              {/* WhatsApp and Email Quick CTAs */}
+              <div style={{
+                display: "flex",
+                gap: 16,
+                width: "90%",
+                marginBottom: 30,
+                zIndex: 2,
+                flexWrap: "wrap"
+              }}>
+                {/* WhatsApp Chat */}
+                <a href="https://wa.me/919969569535" target="_blank" rel="noopener noreferrer" style={{
+                  flex: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 10,
+                  backgroundColor: "#25D366",
+                  color: "#ffffff",
+                  padding: "14px 20px",
+                  borderRadius: 4,
+                  textDecoration: "none",
+                  fontWeight: 700,
+                  fontSize: 13.5,
+                  boxShadow: "0 4px 12px rgba(37,211,102,0.25)",
+                  transition: "background-color 0.2s",
+                  minWidth: 140
+                }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#1ebd56"}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#25D366"}
+                >
+                  <FaWhatsapp style={{ fontSize: 17 }} />
+                  WhatsApp
+                </a>
+
+                {/* Email Support */}
+                <a href="mailto:support@medilo.com" style={{
+                  flex: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 10,
+                  backgroundColor: "#2783e3",
+                  color: "#ffffff",
+                  padding: "14px 20px",
+                  borderRadius: 4,
+                  textDecoration: "none",
+                  fontWeight: 700,
+                  fontSize: 13.5,
+                  boxShadow: "0 4px 12px rgba(39,131,227,0.25)",
+                  transition: "background-color 0.2s",
+                  minWidth: 140
+                }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#1667b9"}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#2783e3"}
+                >
+                  <FaEnvelope style={{ fontSize: 15 }} />
+                  Email Us
+                </a>
               </div>
 
             </div>
