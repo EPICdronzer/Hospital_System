@@ -245,14 +245,13 @@ export default function AboutUs() {
 
             {/* Heading */}
             <h2 style={{ color: "#0d1b4b", fontWeight: 900, fontSize: 36, lineHeight: 1.2, margin: "0 0 16px" }}>
-              More Than 26+ Years About<br />Provide Medical.
+              26+ वर्षों की अनुभवी<br />चिकित्सा सेवा
+              <span style={{ display: "block", fontSize: 18, fontWeight: 600, color: "#6b7280", marginTop: 4 }}>More Than 26+ Years Providing Medical Care</span>
             </h2>
 
             {/* Paragraph */}
             <p style={{ color: "#6b7280", fontSize: 14, lineHeight: 1.75, margin: "0 0 28px" }}>
-              We are privileged to work with hundreds of future-thinking medial,
-              including many of the world's top hardware, software, and brands,
-              feel safe and comfortable in establishing.
+              हम सैकड़ों परिवारों को बेहतर स्वास्थ्य सेवा प्रदान करने का सौभाग्य पाते हैं। भारत के शीर्ष चिकित्सा विशेषज्ञों के साथ, हम आपको सुरक्षित और आरामदायक अनुभव देने के लिए समर्पित हैं।
             </p>
 
             {/* Support Columns */}
@@ -267,10 +266,10 @@ export default function AboutUs() {
                   }}>
                     <FaHeadset style={{ fontSize: 16 }} />
                   </span>
-                  <h4 style={{ color: "#0d1b4b", fontWeight: 800, fontSize: 15, margin: 0 }}>Client Support</h4>
+                  <h4 style={{ color: "#0d1b4b", fontWeight: 800, fontSize: 15, margin: 0 }}>रोगी सहायता | Client Support</h4>
                 </div>
                 <p style={{ color: "#6b7280", fontSize: 13, lineHeight: 1.6, margin: 0 }}>
-                  But must explain to you medical of and pain was.
+                  24/7 रोगी सेवा। हम आपकी हर स्वास्थ्य समस्या के लिए यहाँ हैं।
                 </p>
               </div>
 
@@ -284,10 +283,10 @@ export default function AboutUs() {
                   }}>
                     <FaUserMd style={{ fontSize: 16 }} />
                   </span>
-                  <h4 style={{ color: "#0d1b4b", fontWeight: 800, fontSize: 15, margin: 0 }}>Doctor Support</h4>
+                  <h4 style={{ color: "#0d1b4b", fontWeight: 800, fontSize: 15, margin: 0 }}>विशेषज्ञ चिकित्सक | Doctor Support</h4>
                 </div>
                 <p style={{ color: "#6b7280", fontSize: 13, lineHeight: 1.6, margin: 0 }}>
-                  But must explain to you medical of and pain was.
+                  भारत के अनुभवी और विशेषज्ञ चिकित्सकों की एक समर्पित टीम।
                 </p>
               </div>
             </div>
