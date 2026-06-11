@@ -1,13 +1,15 @@
 "use client";
-import { useState } from "react";
-import Image from "next/image";
+import { useState, useEffect } from "react";
 import { FaCheckCircle, FaPhoneAlt, FaEnvelope, FaPlay } from "react-icons/fa";
-
-const CACHE_BUSTER = typeof Date !== "undefined" ? Date.now() : "";
 
 export default function Hero() {
   const [card1Hovered, setCard1Hovered] = useState(false);
   const [card2Hovered, setCard2Hovered] = useState(false);
+  const [cacheBuster, setCacheBuster] = useState("");
+
+  useEffect(() => {
+    setCacheBuster(Date.now().toString());
+  }, []);
 
   return (
     <section className="relative w-full">
@@ -17,7 +19,7 @@ export default function Hero() {
 
         {/* ✅ Background image — fixed filename: hero-bg.png.png */}
         <img
-          src={`/hero-bg.png.png?v=${CACHE_BUSTER}`}
+          src={cacheBuster ? `/hero-bg.png.png?v=${cacheBuster}` : "/hero-bg.png.png"}
           alt="Medical hero background"
           className="absolute inset-0 w-full h-full object-cover object-center"
           style={{ zIndex: 0 }}
@@ -87,7 +89,7 @@ export default function Hero() {
           {/* ✅ Doctor Image on Right (hidden on mobile/tablet) */}
           <div className="absolute right-[38px] bottom-[-90px] hidden lg:block w-[480px] h-[650px] z-30 pointer-events-none">
             <img
-              src={`/indian_doctor_hero.png?v=${CACHE_BUSTER}`}
+              src={cacheBuster ? `/indian_doctor_hero.png?v=${cacheBuster}` : "/indian_doctor_hero.png"}
               alt="Indian Doctor Medilo"
               className="absolute inset-0 w-full h-full object-contain object-bottom"
             />

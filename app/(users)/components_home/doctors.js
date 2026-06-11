@@ -7,8 +7,6 @@ import {
   FaChevronLeft, FaChevronRight,
 } from "react-icons/fa";
 
-const CACHE_BUSTER = typeof Date !== "undefined" ? Date.now() : "";
-
 const DOCTORS = [
   { id: "jayesh-vyas",      name: "Dr. Jayesh Vyas",      specialty: "हृदय रोग विशेषज्ञ (Cardiologist)",       img: "/dr_jayesh_vyas.png" },
   { id: "sandeep-banerjee", name: "Dr. Sandeep Banerjee", specialty: "सामान्य चिकित्सक (General Physician)",   img: "/dr_sandeep_banerjee.png" },
@@ -24,8 +22,8 @@ const SOCIALS    = [FaFacebookF, FaPinterestP, FaTwitter, FaInstagram];
 const CARD_HEIGHT = 360;
 
 /* ── Doctor card (shared) ── */
-function DoctorCard({ doc, isHovered, onEnter, onLeave }) {
-  const imgSrc = doc.img.startsWith("/") ? `${doc.img}?v=${CACHE_BUSTER}` : doc.img;
+function DoctorCard({ doc, isHovered, onEnter, onLeave, cacheBuster }) {
+  const imgSrc = doc.img.startsWith("/") && cacheBuster ? `${doc.img}?v=${cacheBuster}` : doc.img;
   return (
     <Link
       href={`/doctor/${doc.id}`}
@@ -135,7 +133,12 @@ export default function Doctors() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [animating, setAnimating]       = useState(false);
   const [direction, setDirection]       = useState("left");
+  const [cacheBuster, setCacheBuster]   = useState("");
   const trackRef = useRef(null);
+
+  useEffect(() => {
+    setCacheBuster(Date.now().toString());
+  }, []);
 
   /* Desktop: 4 cards per page */
   const VISIBLE    = 4;
@@ -309,6 +312,7 @@ export default function Doctors() {
                     isHovered={hoveredId === gIdx}
                     onEnter={() => setHoveredId(gIdx)}
                     onLeave={() => setHoveredId(null)}
+                    cacheBuster={cacheBuster}
                   />
                 );
               })}
@@ -358,6 +362,7 @@ export default function Doctors() {
                   isHovered={hoveredId === doc.id}
                   onEnter={() => setHoveredId(doc.id)}
                   onLeave={() => setHoveredId(null)}
+                  cacheBuster={cacheBuster}
                 />
               ))}
             </div>

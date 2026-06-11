@@ -1,10 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaClock, FaCalendarAlt, FaUserMd, FaPhone } from "react-icons/fa";
-
-const CACHE_BUSTER = typeof Date !== "undefined" ? Date.now() : "";
 
 const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
@@ -133,6 +131,11 @@ const DOCTORS = [
 
 export default function TimetableSection() {
   const [activeDay, setActiveDay] = useState("Monday");
+  const [cacheBuster, setCacheBuster] = useState("");
+
+  useEffect(() => {
+    setCacheBuster(Date.now().toString());
+  }, []);
 
   const todayDoctors = DOCTORS.map((doc) => ({
     ...doc,
@@ -236,7 +239,7 @@ export default function TimetableSection() {
                 {/* Image */}
                 <div style={{ height: 200, overflow: "hidden", position: "relative" }}>
                   <img
-                    src={doc.img.startsWith("/") ? `${doc.img}?v=${CACHE_BUSTER}` : doc.img}
+                    src={doc.img.startsWith("/") && cacheBuster ? `${doc.img}?v=${cacheBuster}` : doc.img}
                     alt={doc.name}
                     style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
                   />
