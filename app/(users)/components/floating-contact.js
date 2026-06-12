@@ -1,18 +1,48 @@
 "use client";
 
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 
 export default function FloatingContact() {
+  const [isVisible, setIsVisible] = useState(true);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const footer = document.querySelector("footer");
+    if (!footer) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(!entry.isIntersecting);
+      },
+      {
+        rootMargin: "0px",
+        threshold: 0,
+      }
+    );
+
+    observer.observe(footer);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [pathname]);
+
   return (
     <div
       style={{
         position: "fixed",
-        left: "20px",
+        right: "20px",
         bottom: "30px",
         display: "flex",
         flexDirection: "column",
         gap: "14px",
         zIndex: 9999,
+        opacity: isVisible ? 1 : 0,
+        pointerEvents: isVisible ? "auto" : "none",
+        transform: isVisible ? "translateY(0)" : "translateY(20px)",
+        transition: "opacity 0.3s ease, transform 0.3s ease",
       }}
     >
       <style>{`
@@ -35,7 +65,7 @@ export default function FloatingContact() {
         }
         .floating-tooltip {
           position: absolute;
-          left: 64px;
+          right: 64px;
           background-color: #0d1b4b;
           color: #ffffff;
           padding: 6px 12px;
@@ -52,7 +82,7 @@ export default function FloatingContact() {
         .floating-btn:hover .floating-tooltip {
           opacity: 1;
           visibility: visible;
-          left: 60px;
+          right: 60px;
         }
         @keyframes pulse-whatsapp {
           0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
